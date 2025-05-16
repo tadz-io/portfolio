@@ -1,6 +1,6 @@
 import BlurFade from "@/components/magicui/blur-fade";
 import BlurFadeText from "@/components/magicui/blur-fade-text";
-import { getBlogPosts } from "@/lib/blog";
+import { getBlogPosts } from "@/data/blog";
 import { formatDate } from "@/lib/utils";
 import Link from "next/link";
 
