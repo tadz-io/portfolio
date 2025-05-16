@@ -199,8 +199,8 @@ export const DATA = {
       ],
       links: [
         {
-          type: "Website",
-          href: "https://chatcollect.com",
+          type: "Case study",
+          // href: "https://chatcollect.com",
           icon: <Icons.globe className="size-3" />,
         },
       ],

@@ -13,10 +13,10 @@ import Markdown from "react-markdown";
 
 interface Props {
   title: string;
-  href?: string; // This will be the primary link for the card (e.g., to blog post or project site)
+  href?: string; // This is the primary link for the entire card, set by the parent page
   description: string;
   dates: string;
-  tags: readonly string[];
+  tags: readonly string[]; // In page.tsx, pass project.technologies as tags
   link?: string; // For the print-visible link
   image?: string;
   video?: string;
@@ -26,12 +26,12 @@ interface Props {
     href: string;
   }[];
   className?: string;
-  slug?: string; // Add slug to props
+  slug?: string; // The project's slug, used for linking to blog posts
 }
 
 export function ProjectCard({
   title,
-  href,
+  href, // Main link for the card (and title), determined in page.tsx
   description,
   dates,
   tags,
@@ -40,7 +40,7 @@ export function ProjectCard({
   video,
   links,
   className,
-  slug, // Destructure slug
+  slug, // Project's slug
 }: Props) {
   return (
     <Card
@@ -49,7 +49,7 @@ export function ProjectCard({
       }
     >
       <Link
-        href={href || "#"} // Main card link, determined by parent component
+        href={href || "#"} // Entire card links to what's passed in href prop
         className={cn("block cursor-pointer", className)}
       >
         {video && (
@@ -75,7 +75,8 @@ export function ProjectCard({
       <CardHeader className="px-2">
         <div className="space-y-1">
           <CardTitle className="mt-1 text-base">
-            <Link href={href || "#"}>{title}</Link> {/* Title also links */}
+            {/* Title also links to the card's main href */}
+            <Link href={href || "#"}>{title}</Link>
           </CardTitle>
           <time className="font-sans text-xs">{dates}</time>
           <div className="hidden font-sans text-xs underline print:visible">
@@ -101,20 +102,35 @@ export function ProjectCard({
           </div>
         )}
       </CardContent>
-      <CardFooter className="px-2 pb-2 pt-1"> {/* Added pt-1 for a bit of top padding */}
+      <CardFooter className="px-2 pb-2 pt-1">
         {links && links.length > 0 && (
           <div className="flex flex-row flex-wrap items-start gap-1">
             {links?.map((itemLink, idx) => {
-              let buttonHref = itemLink.href;
-              // Check if this link type should point to the blog post
+              let determinedHref = itemLink.href; // Default to the href specified in the links array item
+              let determinedTarget = "_blank";    // Default target
+
               const linkTypeLower = itemLink.type.toLowerCase();
-              if ((linkTypeLower === "website" || linkTypeLower === "demo" || linkTypeLower === "live") && slug) {
-                buttonHref = `/blog/${slug}`;
+
+              if (linkTypeLower === "case study" && slug) {
+                determinedHref = `/blog/${slug}`;
+                determinedTarget = "_self"; // Internal blog link
+              } else {
+                // For "Website", "Source", or "Case study" without a slug, etc.
+                // Use itemLink.href. Determine target based on its nature.
+                // If itemLink.href (which is now determinedHref) starts with "/" or "#", it's internal.
+                if (determinedHref.startsWith("/") || determinedHref.startsWith("#")) {
+                  determinedTarget = "_self";
+                }
+                // Otherwise, it's an external link, and target remains "_blank".
               }
 
+              // For "Website" type, determinedHref is already itemLink.href.
+              // Based on your data, itemLink.href for "Website" type buttons
+              // is the project's main website URL (project.href from DATA).
+
               return (
-                <Link href={buttonHref} key={idx} target={slug && (linkTypeLower === "website" || linkTypeLower === "demo" || linkTypeLower === "live") ? "_self" : "_blank"} rel="noopener noreferrer">
-                  <Badge className="flex gap-2 px-2 py-1 text-[10px] items-center"> {/* Added items-center */}
+                <Link href={determinedHref} key={idx} target={determinedTarget} rel="noopener noreferrer">
+                  <Badge className="flex gap-2 px-2 py-1 text-[10px] items-center">
                     {itemLink.icon}
                     {itemLink.type}
                   </Badge>
