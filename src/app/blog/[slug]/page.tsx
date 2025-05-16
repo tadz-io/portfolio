@@ -120,7 +120,7 @@ export default async function BlogPostPage({
       <section id="post-content">
         <BlurFade delay={BLUR_FADE_DELAY * 3}>
           <article
-            className="prose max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert mx-auto" 
+            className="px-4 prose text-pretty font-sans text-sm text-muted-foreground dark:prose-invert mx-auto" 
             dangerouslySetInnerHTML={{ __html: post.source }}
           />
         </BlurFade>
