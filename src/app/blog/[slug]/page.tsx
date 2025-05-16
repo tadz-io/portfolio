@@ -58,7 +58,7 @@ export default async function BlogPostPage({
 
   return (
     <main className="flex flex-col min-h-[100dvh] space-y-10 px-4 md:px-0"> {/* Added padding for smaller screens */}
-      <section id="post-header" className="pt-8 md:pt-12">
+      <section id="post-header" className="pt-8 md:pt-2">
         <div className="space-y-4 text-center md:text-left"> {/* Increased space-y for visual separation */}
           <BlurFadeText
             delay={BLUR_FADE_DELAY}
@@ -71,7 +71,7 @@ export default async function BlogPostPage({
           {(metadata.projectImage || metadata.projectVideo) && (
             <BlurFade 
               delay={BLUR_FADE_DELAY * 2}
-              className="-mx-4 md:mx-0" 
+              className="pt-2 -mx-4 md:mx-0" 
             >
               {metadata.projectVideo && (
                 <video
@@ -110,7 +110,7 @@ export default async function BlogPostPage({
       {metadata.summary && (
         <section id="post-summary" className="pt-2"> {/* Adjusted padding/margin as needed */}
           <BlurFade delay={BLUR_FADE_DELAY * 2.75}> {/* Adjusted delay */}
-            <p className="text-muted-foreground md:text-xl/relaxed lg:text-xl/relaxed xl:text-xl/relaxed text-pretty text-center md:text-left">
+            <p className="text-muted-foreground text-xl/relaxed text-pretty text-center md:text-left">
               {metadata.summary}
             </p>
           </BlurFade>
@@ -120,7 +120,7 @@ export default async function BlogPostPage({
       <section id="post-content">
         <BlurFade delay={BLUR_FADE_DELAY * 3}>
           <article
-            className="prose max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert lg:prose-lg xl:prose-xl mx-auto" 
+            className="prose max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert mx-auto" 
             dangerouslySetInnerHTML={{ __html: post.source }}
           />
         </BlurFade>
