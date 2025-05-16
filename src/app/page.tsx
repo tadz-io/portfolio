@@ -84,6 +84,7 @@ export default function Page() {
                   image={project.image}
                   video={project.video}
                   links={project.links}
+                  slug={project.slug}
                 />
               </BlurFade>
             ))}
