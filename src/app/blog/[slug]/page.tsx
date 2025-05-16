@@ -67,9 +67,12 @@ export default async function BlogPostPage({
             text={metadata.title}
           />
 
-          {/* Section for Project Image or Video - MOVED HERE */}
+          {/* Section for Project Image or Video */}
           {(metadata.projectImage || metadata.projectVideo) && (
-            <BlurFade delay={BLUR_FADE_DELAY * 2}> {/* Adjusted delay */}
+            <BlurFade 
+              delay={BLUR_FADE_DELAY * 2}
+              className="-mx-4 md:mx-0" 
+            >
               {metadata.projectVideo && (
                 <video
                   src={metadata.projectVideo}
@@ -77,25 +80,25 @@ export default async function BlogPostPage({
                   loop
                   muted
                   playsInline
-                  className="w-full h-auto rounded-lg object-cover shadow-lg" // Full width, maintain aspect ratio
+                  className="w-full h-auto rounded-lg object-cover shadow-lg" 
                 />
               )}
               {metadata.projectImage && !metadata.projectVideo && (
                 <div className="w-full rounded-lg overflow-hidden shadow-lg">
                   <Image
                     src={metadata.projectImage}
-                    alt={metadata.title} // Alt text for the image
-                    width={1200} // Base width for aspect ratio calculation (adjust as needed)
-                    height={675} // Base height for aspect ratio (e.g., 16:9)
-                    layout="responsive" // Makes the image scale with the container width
-                    className="object-cover" // Ensures image covers the area, might crop
+                    alt={metadata.title} 
+                    width={1200} 
+                    height={675} 
+                    layout="responsive" 
+                    className="object-cover" 
                   />
                 </div>
               )}
             </BlurFade>
           )}
 
-          <BlurFade delay={BLUR_FADE_DELAY * 2.5}> {/* Adjusted delay */}
+          <BlurFade delay={BLUR_FADE_DELAY * 2.5}> 
             <time className="text-sm text-muted-foreground">
               Published on {formatDate(metadata.publishedAt)}
             </time>
@@ -103,10 +106,21 @@ export default async function BlogPostPage({
         </div>
       </section>
 
+      {/* Section for Post Summary - ADDED HERE */}
+      {metadata.summary && (
+        <section id="post-summary" className="pt-2"> {/* Adjusted padding/margin as needed */}
+          <BlurFade delay={BLUR_FADE_DELAY * 2.75}> {/* Adjusted delay */}
+            <p className="text-muted-foreground md:text-xl/relaxed lg:text-xl/relaxed xl:text-xl/relaxed text-pretty text-center md:text-left">
+              {metadata.summary}
+            </p>
+          </BlurFade>
+        </section>
+      )}
+
       <section id="post-content">
         <BlurFade delay={BLUR_FADE_DELAY * 3}>
           <article
-            className="prose max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert lg:prose-lg xl:prose-xl mx-auto" // Centering prose content
+            className="prose max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert lg:prose-lg xl:prose-xl mx-auto" 
             dangerouslySetInnerHTML={{ __html: post.source }}
           />
         </BlurFade>
