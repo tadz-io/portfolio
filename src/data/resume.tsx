@@ -181,7 +181,7 @@ export const DATA = {
   projects: [
     {
       title: "Chat Collect",
-      href: "https://chatcollect.com",
+      // href: "https://chatcollect.com",
       slug: "hello-world",
       dates: "Jan 2024 - Feb 2024",
       active: true,
@@ -201,6 +201,7 @@ export const DATA = {
         {
           type: "Case study",
           // href: "https://chatcollect.com",
+          slug: "hello-world",
           icon: <Icons.globe className="size-3" />,
         },
       ],
@@ -211,7 +212,6 @@ export const DATA = {
     {
       title: "Magic UI",
       href: "https://magicui.design",
-      slug: "hello-world",
       dates: "June 2023 - Present",
       active: true,
       description:
@@ -244,7 +244,6 @@ export const DATA = {
     {
       title: "llm.report",
       href: "https://llm.report",
-      slug: "hello-world",
       dates: "April 2023 - September 2023",
       active: true,
       description:
@@ -278,7 +277,6 @@ export const DATA = {
     {
       title: "Automatic Chat",
       href: "https://automatic.chat",
-      slug: "hello-world",
       dates: "April 2023 - March 2024",
       active: true,
       description:

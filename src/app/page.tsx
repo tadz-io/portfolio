@@ -69,25 +69,49 @@ export default function Page() {
             </div>
           </BlurFade>
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto">
-            {DATA.projects.map((project, id) => (
-              <BlurFade
-                key={project.title}
-                delay={BLUR_FADE_DELAY * 12 + id * 0.05}
-              >
-                <ProjectCard
-                  href={project.href}
-                  key={project.title}
-                  title={project.title}
-                  description={project.description}
-                  dates={project.dates}
-                  tags={project.technologies}
-                  image={project.image}
-                  video={project.video}
-                  links={project.links}
-                  slug={project.slug}
-                />
-              </BlurFade>
-            ))}
+          {DATA.projects.map((project, id) => {
+              let cardMainLink: string;
+              // Determine the main link for the ProjectCard (image/video/title)
+              // A project can have a top-level 'slug' (for blog post) or 'href' (for external site)
+              if ("slug" in project && project.slug) {
+                cardMainLink = `/blog/${project.slug}`;
+              } else if ("href" in project && project.href) {
+                cardMainLink = project.href;
+              } else {
+                cardMainLink = "#"; // Fallback if neither slug nor href is present
+              }
+
+              // Determine the link for the print view
+              let cardPrintLink: string | undefined;
+              if ("href" in project && project.href) { // Prefer direct external link if available
+                cardPrintLink = project.href;
+              } else if ("slug" in project && project.slug) { // If no direct href, but has a slug, link to the blog post
+                // Construct absolute URL for blog post if DATA.url is set, otherwise relative
+                cardPrintLink = DATA.url
+                  ? `${DATA.url}/blog/${project.slug}`
+                  : `/blog/${project.slug}`;
+              }
+
+              return (
+                <BlurFade
+                  key={project.title} // Unique key for the list item
+                  delay={BLUR_FADE_DELAY * 12 + id * 0.05}
+                >
+                  <ProjectCard
+                    // No key prop here as BlurFade has it
+                    href={cardMainLink} // Main link for the card
+                    title={project.title}
+                    description={project.description}
+                    dates={project.dates}
+                    tags={project.technologies}
+                    image={project.image}
+                    video={project.video}
+                    links={project.links} // Pass the links array for footer buttons
+                    printLink={cardPrintLink} // Pass the determined print link
+                  />
+                </BlurFade>
+              );
+            })}
           </div>
         </div>
       </section>
