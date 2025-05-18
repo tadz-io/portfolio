@@ -4,6 +4,7 @@ import { getPost, PostMetadata } from "@/data/blog"; // Import PostMetadata type
 import { formatDate } from "@/lib/utils";
 import { notFound } from "next/navigation";
 import Image from "next/image"; // Import Next.js Image component
+import { Badge } from "@/components/ui/badge";
 
 const BLUR_FADE_DELAY = 0.04;
 
@@ -99,9 +100,40 @@ export default async function BlogPostPage({
           )}
 
           <BlurFade delay={BLUR_FADE_DELAY * 2.5}> 
-            <time className="text-sm text-muted-foreground">
-              Published on {formatDate(metadata.publishedAt)}
-            </time>
+            <div className="text-sm text-muted-foreground space-y-2 pt-2"> {/* Added pt-2 for spacing */}
+              {metadata.client && (
+                <div className="flex items-center">
+                  <strong className="font-semibold mr-2">Client:</strong>
+                  <span>{metadata.client}</span>
+                </div>
+              )}
+              {metadata.services && (
+                <div className="flex items-center">
+                  <strong className="font-semibold mr-2">Services:</strong>
+                  <span>{metadata.services}</span>
+                </div>
+              )}
+              {metadata.stack && metadata.stack.length > 0 && (
+                <div className="flex items-start">
+                  <strong className="font-semibold mr-2 mt-0.5">Stack:</strong>
+                  <div className="flex flex-wrap items-center gap-x-1.5 gap-y-1">
+                    {metadata.stack.map((tech) => {
+                      // const Icon = getIconForTechnology(tech); // We no longer need to call this if icon is not used
+                      return (
+                        <Badge
+                          key={tech}
+                          variant="secondary"
+                          className="px-1.5 py-0.5 text-[10px]" // Removed flex, items-center, and gap-1 as icon is gone
+                        >
+                          {/* {Icon} REMOVED ICON RENDERING */}
+                          {tech}
+                        </Badge>
+                      );
+                    })}
+              </div>
+            </div>
+            )}
+          </div>
           </BlurFade>
         </div>
       </section>

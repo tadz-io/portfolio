@@ -16,7 +16,9 @@ type FrontmatterMetadata = {
   publishedAt: string;
   summary: string;
   image?: string; // Optional image directly in frontmatter if you ever need it
-  // Add any other fields you expect in your frontmatter
+  client?: string;
+  services?: string;
+  stack?: string[];
 };
 
 // Define the structure of the metadata object that getPost will return
