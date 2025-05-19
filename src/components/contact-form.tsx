@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 
 export default function ContactForm() {
-  const formRef = useRef();
+  const formRef = useRef(null);
   const [status, setStatus] = useState<"idle"|"loading"|"success"|"error">("idle");
 
   useEffect(() => {
@@ -38,12 +38,12 @@ export default function ContactForm() {
       className="w-full max-w-md mx-auto space-y-6"
     >
       <div>
-        <label htmlFor="from_name" className="block text-sm font-medium text-gray-700">
+        <label htmlFor="name" className="block text-sm font-medium text-gray-700">
           Name
         </label>
         <input
-          id="from_name"
-          name="from_name"
+          id="name"
+          name="name"
           type="text"
           required
           className="mt-1 block w-full rounded-md border-gray-300 shadow-sm px-3 py-2 text-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-200"
@@ -52,12 +52,12 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="from_email" className="block text-sm font-medium text-gray-700">
+        <label htmlFor="email" className="block text-sm font-medium text-gray-700">
           Email
         </label>
         <input
-          id="from_email"
-          name="from_email"
+          id="email"
+          name="email"
           type="email"
           required
           className="mt-1 block w-full rounded-md border-gray-300 shadow-sm px-3 py-2 text-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-200"
