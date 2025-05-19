@@ -18,7 +18,6 @@ type FrontmatterMetadata = {
   image?: string; // Optional image directly in frontmatter if you ever need it
   client?: string;
   services?: string;
-  stack?: string[];
 };
 
 // Define the structure of the metadata object that getPost will return
@@ -26,6 +25,7 @@ type FrontmatterMetadata = {
 export type PostMetadata = FrontmatterMetadata & {
   projectImage?: string; // Image from the corresponding project
   projectVideo?: string; // Video from the corresponding project
+  stack?: string[];
 };
 
 function getMDXFiles(dir: string) {
@@ -82,6 +82,9 @@ export async function getPost(slug: string) {
     }
     if ("video" in project && project.video) {
       postMetadata.projectVideo = project.video;
+    }
+    if ("technologies" in project && Array.isArray(project.technologies)) {
+      postMetadata.stack = project.technologies as string[];
     }
   }
 

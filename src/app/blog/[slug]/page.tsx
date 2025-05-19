@@ -99,41 +99,43 @@ export default async function BlogPostPage({
             </BlurFade>
           )}
 
-          <BlurFade delay={BLUR_FADE_DELAY * 2.5}> 
-            <div className="text-sm text-muted-foreground space-y-2 pt-2"> {/* Added pt-2 for spacing */}
-              {metadata.client && (
-                <div className="flex items-center">
-                  <strong className="font-semibold mr-2">Client:</strong>
-                  <span>{metadata.client}</span>
-                </div>
-              )}
-              {metadata.services && (
-                <div className="flex items-center">
-                  <strong className="font-semibold mr-2">Services:</strong>
-                  <span>{metadata.services}</span>
+          <BlurFade delay={BLUR_FADE_DELAY * 2.5}>
+            <div className="text-sm text-muted-foreground space-y-2 pt-2">
+              {(metadata.client || metadata.services) && (
+                <div className="flex flex-wrap items-center gap-x-6 gap-y-1"> {/* Use gap-x for horizontal spacing, gap-y for wrap */}
+                  {metadata.client && (
+                    <div className="flex items-center">
+                      <strong className="font-semibold mr-1.5">Client:</strong> {/* Reduced mr for tighter label */}
+                      <span>{metadata.client}</span>
+                    </div>
+                  )}
+                  {metadata.services && (
+                    <div className="flex items-center">
+                      <strong className="font-semibold mr-1.5">Services:</strong> {/* Reduced mr for tighter label */}
+                      <span>{metadata.services}</span>
+                    </div>
+                  )}
                 </div>
               )}
               {metadata.stack && metadata.stack.length > 0 && (
-                <div className="flex items-start">
+                <div className="flex items-start pt-1"> {/* Added pt-1 for slight separation if client/services wrapped */}
                   <strong className="font-semibold mr-2 mt-0.5">Stack:</strong>
                   <div className="flex flex-wrap items-center gap-x-1.5 gap-y-1">
                     {metadata.stack.map((tech) => {
-                      // const Icon = getIconForTechnology(tech); // We no longer need to call this if icon is not used
                       return (
                         <Badge
                           key={tech}
                           variant="secondary"
-                          className="px-1.5 py-0.5 text-[10px]" // Removed flex, items-center, and gap-1 as icon is gone
+                          className="px-1.5 py-0.5 text-[10px]"
                         >
-                          {/* {Icon} REMOVED ICON RENDERING */}
                           {tech}
                         </Badge>
                       );
                     })}
-              </div>
+                  </div>
+                </div>
+              )}
             </div>
-            )}
-          </div>
           </BlurFade>
         </div>
       </section>
