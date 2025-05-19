@@ -129,7 +129,7 @@ export default function Page() {
               </h2>
               <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 Want to chat or work together? Send me a {" "}
-                <Link href={DATA.contact.social.X.url} className="text-blue-500 hover:underline">
+                <Link href="#contact-form" className="text-blue-500 hover:underline">
                   message
                 </Link>{" "}
                 or book a free call:
@@ -262,7 +262,7 @@ export default function Page() {
                 Contact Me
               </div>
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                Send Me a Message
+                Send me a message
               </h2>
             </div>
           </BlurFade>
