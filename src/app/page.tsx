@@ -1,8 +1,10 @@
 import { HackathonCard } from "@/components/hackathon-card";
+import { Phone } from 'lucide-react';
 import BlurFade from "@/components/magicui/blur-fade";
 import BlurFadeText from "@/components/magicui/blur-fade-text";
 import { ProjectCard } from "@/components/project-card";
 import { ResumeCard } from "@/components/resume-card";
+import ContactForm from "@/components/contact-form";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { DATA } from "@/data/resume";
@@ -115,6 +117,38 @@ export default function Page() {
           </div>
         </div>
       </section>
+      <section id="contact">
+        <div className="grid items-center justify-center gap-4 px-4 text-center md:px-6 w-full py-5">
+          <BlurFade delay={BLUR_FADE_DELAY * 16}>
+            <div className="space-y-3">
+              <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
+                Contact
+              </div>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+                Get in Touch
+              </h2>
+              <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                Want to chat or work together? Send me a {" "}
+                <Link href={DATA.contact.social.X.url} className="text-blue-500 hover:underline">
+                  message
+                </Link>{" "}
+                or book a free call:
+              </p>
+            </div>
+          </BlurFade>
+          <BlurFade delay={BLUR_FADE_DELAY * 17}>
+            <div className="flex justify-center"> {/* ADDED: flex justify-center wrapper */}
+              <Link
+                href="#" // Replace with your actual scheduling link
+                className="flex items-center justify-center rounded-full bg-red-400 text-white px-4 py-2 font-semibold hover:bg-red-300 transition-colors duration-200" // REMOVED: mx-auto
+              >
+                <Phone className="size-5 mr-2" /> {/* Phone Icon */}
+                Book a Call
+              </Link>
+            </div>
+          </BlurFade>
+        </div>
+      </section>
       <section id="work">
         <div className="flex min-h-0 flex-col gap-y-3">
           <BlurFade delay={BLUR_FADE_DELAY * 5}>
@@ -220,28 +254,20 @@ export default function Page() {
           </BlurFade>
         </div>
       </section>
-      <section id="contact">
-        <div className="grid items-center justify-center gap-4 px-4 text-center md:px-6 w-full py-12">
-          <BlurFade delay={BLUR_FADE_DELAY * 16}>
-            <div className="space-y-3">
+      <section id="contact-form">
+        <div className="space-y-12 w-full py-12 px-4 md:px-6">
+          <BlurFade delay={BLUR_FADE_DELAY * 18}>
+            <div className="flex flex-col items-center text-center space-y-4">
               <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
-                Contact
+                Contact Me
               </div>
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                Get in Touch
+                Send Me a Message
               </h2>
-              <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Want to chat? Just shoot me a dm{" "}
-                <Link
-                  href={DATA.contact.social.X.url}
-                  className="text-blue-500 hover:underline"
-                >
-                  with a direct question on twitter
-                </Link>{" "}
-                and I&apos;ll respond whenever I can. I will ignore all
-                soliciting.
-              </p>
             </div>
+          </BlurFade>
+          <BlurFade delay={BLUR_FADE_DELAY * 19}>
+            <ContactForm />
           </BlurFade>
         </div>
       </section>
