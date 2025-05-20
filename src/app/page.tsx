@@ -10,6 +10,7 @@ import { Badge } from "@/components/ui/badge";
 import { DATA } from "@/data/resume";
 import Link from "next/link";
 import Markdown from "react-markdown";
+import { ClientLogos } from "@/components/client-carousel";
 
 const BLUR_FADE_DELAY = 0.04;
 
@@ -113,10 +114,14 @@ export default function Page() {
               );
             })}
           </div>
+          {/* Client Logos Carousel */}
+          <BlurFade delay={BLUR_FADE_DELAY * 12.5}>
+            <ClientLogos />
+          </BlurFade>
         </div>
       </section>
       <section id="contact">
-        <div className="grid items-center justify-center gap-4 px-4 text-center md:px-6 w-full py-5">
+        <div className="grid items-center justify-center gap-4 px-4 text-center md:px-6 w-full mt-0 mb-12">
           <BlurFade delay={BLUR_FADE_DELAY * 16}>
             <div className="space-y-3">
               <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">

@@ -143,3 +143,24 @@ code[data-line-numbers-max-digits="2"] > [data-line]::before {
 code[data-line-numbers-max-digits="3"] > [data-line]::before {
   width: 3rem;
 }
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Scroll by one-third of the width since we tripled the content */
+    /* Adjust if you change the duplication factor in ClientLogos.tsx */
+    transform: translateX(-33.3333%);
+  }
+}
+
+.animate-scroll {
+  display: flex;
+  width: fit-content; /* Allow the container to size to its content */
+  animation: scroll 30s linear infinite; /* Adjust duration as needed */
+}
+
+.group-hover\:pause-animation:hover {
+  animation-play-state: paused;
+}

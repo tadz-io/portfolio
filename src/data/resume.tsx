@@ -181,9 +181,9 @@ export const DATA = {
   projects: [
     {
       title: "Advancing water quality monitoring from space",
-      slug: "hello-world",
-      dates: "",
       active: true,
+      dates: "",
+      slug: "hello-world",
       description:
         "...",
       technologies: [
@@ -207,6 +207,7 @@ export const DATA = {
     {
       title: "Underwater hyperspectral imaging",
       active: true,
+      dates: "",
       description:
         "Designed, developed and sold animated UI components for developers.",
       technologies: [
@@ -233,8 +234,8 @@ export const DATA = {
     },
     {
       title: "Physics-based inverse modelling of multi- and hyperspectral observations",
-      dates: "April 2023 - September 2023",
       active: true,
+      dates: "",
       description:
         "HYDROPT, open source, ocean color,...",
       technologies: [
@@ -263,6 +264,7 @@ export const DATA = {
     {
       title: "Hyperspectral image processing at scale",
       active: true,
+      dates: "",
       description:
         "Hyperspectral imagery, radiometric & geometric image calibration, reflectance, band models",
       technologies: [
@@ -288,6 +290,16 @@ export const DATA = {
       image: "/images/hyperspectral-stack.png",
       video: "",
     },
+  ],
+  clients: [
+    { name: "University of Amsterdam", logoUrl: "/uva-dark.png" },
+    { name: "SCRIPPS", logoUrl: "/scripps-dark.png" },
+    { name: "planblue", logoUrl: "/planblue.svg" },
+    { name: "University of Queensland", logoUrl: "/uq-dark.png" },
+    { name: "Gybe Inc.", logoUrl: "/gybe-dark.png" },
+    { name: "Global Change Institute", logoUrl: "/gci-dark.png" },
+    { name: "Vrije Universiteit Amsterdam", logoUrl: "/vu-dark.png" },
+
   ],
   hackathons: [
     {
