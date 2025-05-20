@@ -63,9 +63,7 @@ export default function Page() {
                   Check out my latest work
                 </h2>
                 <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  I&apos;ve worked on a variety of projects, from simple
-                  websites to complex web applications. Here are a few of my
-                  favorites.
+                  I&apos;ve collaborated on a variety of projects with multiple research institutes and clients. Most of my work revolves around using optical imagery to monitor and analyze our changing planet.
                 </p>
               </div>
             </div>

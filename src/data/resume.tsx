@@ -10,7 +10,7 @@ export const DATA = {
   description:
     "Geospatial Data Scientist with 8+ years of experience, passionate about leveraging remote sensing technology to address planetary challenges",
   summary:
-    "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.",
+    "I have a broad interest in the application of geospatial and remote sensing technologies to address environmental and societal challenges at scale. My background is in Remote Sensing & Oceanography, but since then I have branched out into data science, geospatial analysis, and software development. I’m particularly excited by the convergence of physics-based simulations (especially radiative transfer), remote sensing and machine learning. Take a look at my portfolio, and if you’d like to collaborate, please don’t hesitate to get in touch!",
   avatarUrl: "",
   skills: [
     "React",
