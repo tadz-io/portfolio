@@ -72,28 +72,40 @@ export const DATA = {
 
   work: [
     {
-      company: "Atomic Finance",
-      href: "https://atomic.finance",
+      company: "Planblue GmbH",
+      href: "https://www.planblue.com",
       badges: [],
       location: "Remote",
-      title: "Bitcoin Protocol Engineer",
-      logoUrl: "/atomic.png",
-      start: "May 2021",
-      end: "Oct 2022",
+      title: "Data Scientist & Geospatial consultant",
+      logoUrl: "/planblue-work.png",
+      start: "Feb 2024",
+      end: "Apr 2025",
       description:
-        "Implemented the Bitcoin discreet log contract (DLC) protocol specifications as an open source Typescript SDK. Dockerized all microservices and setup production kubernetes cluster. Architected a data lake using AWS S3 and Athena for historical backtesting of bitcoin trading strategies. Built a mobile app using react native and typescript.",
+        `• Implemented automated validation workflows and quality control for raw sensor data and end-user data products.
+        
+        • Specified requirements and implemented solutions for geospatial data processing and storage using Xarray and Zarr.
+
+        • Delivered analysis-ready geospatial data products as GIS compatible raster files
+        `,
     },
     {
-      company: "Shopify",
+      company: "Planblue GmbH",
+      href: "https://www.planblue.com",
       badges: [],
-      href: "https://shopify.com",
       location: "Remote",
-      title: "Software Engineer",
-      logoUrl: "/shopify.svg",
-      start: "January 2021",
-      end: "April 2021",
+      title: "Senior Data Scientist",
+      logoUrl: "/planblue-work.png",
+      start: "Jun 2022",
+      end: "Jan 2024",
       description:
-        "Implemented a custom Kubernetes controller in Go to automate the deployment of MySQL and ProxySQL custom resources in order to enable 2,000+ internal developers to instantly deploy their app databases to production. Wrote several scripts in Go to automate MySQL database failovers while maintaining master-slave replication topologies and keeping Zookeeper nodes consistent with changes.",
+        `• Led the design and development of processing pipelines for hyperspectral imagery, transforming raw data into analysis-ready products
+        
+        • Spearheaded the acquisition of a new optical sensor, enabling our imaging system to derive precise spectral reflectance measurements
+
+        • Designed and conducted calibration and validation experiments to ensure accuracy and reliability of hyperspectral measurements
+
+        • Interfacing between data science, engineering and business teams
+        `,
     },
     {
       company: "Nvidia",
@@ -314,13 +326,13 @@ export const DATA = {
       links: [],
     },
     {
-      title: "Hack The North",
+      title: "Planblue GmbH",
       dates: "September 14th - 16th, 2018",
-      location: "Waterloo, Ontario",
+      location: "Bremen, Germany",
       description:
         "Developed a mobile application which delivers university campus wide events in real time to all students.",
       image:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/hack-the-north.png",
+        "/planblue-work.png",
       mlh: "https://s3.amazonaws.com/logged-assets/trust-badge/2019/mlh-trust-badge-2019-white.svg",
       links: [],
     },
