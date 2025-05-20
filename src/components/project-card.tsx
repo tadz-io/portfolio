@@ -41,6 +41,27 @@ export function ProjectCard({
   links, // This is for footer buttons
   className,
 }: Props) {
+  let imageLinkHref = href; // Default to the main card href
+
+  if (links && links.length > 0) {
+    const caseStudyLink = links.find(link => link.type === "Case study");
+    const websiteLink = links.find(link => link.type === "Website");
+
+    if (caseStudyLink) {
+      if (caseStudyLink.slug) {
+        imageLinkHref = `/blog/${caseStudyLink.slug}`;
+      } else if (caseStudyLink.href) {
+        imageLinkHref = caseStudyLink.href;
+      }
+    } else if (websiteLink) {
+      if (websiteLink.slug) {
+        imageLinkHref = `/blog/${websiteLink.slug}`;
+      } else if (websiteLink.href) {
+        imageLinkHref = websiteLink.href;
+      }
+    }
+  }
+
   return (
     <Card
       className={
@@ -48,7 +69,7 @@ export function ProjectCard({
       }
     >
       <Link
-        href={href} // Main card link (image/video area)
+        href={imageLinkHref} // Main card link (image/video area)
         className={cn("block cursor-pointer", className)}
       >
         {video && (
@@ -67,7 +88,7 @@ export function ProjectCard({
             alt={title}
             width={500}
             height={300}
-            className="h-40 w-full overflow-hidden object-cover object-top"
+            className="h-40 w-full overflow-hidden object-cover object-center"
           />
         )}
       </Link>

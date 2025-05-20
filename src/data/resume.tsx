@@ -228,7 +228,7 @@ export const DATA = {
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41598-023-48263-6/MediaObjects/41598_2023_48263_Fig2_HTML.jpg?as=webp",
+      image: "/images/planblue-hsi.jpg",
       video: "",
     },
     {
@@ -240,6 +240,7 @@ export const DATA = {
       technologies: [
         "Python",
         "Lmfit",
+        "JAX",
         "Scikit-learn",
         "Xarray",
         "Pandas",
@@ -260,33 +261,32 @@ export const DATA = {
       video: "",
     },
     {
-      title: "Automatic Chat",
-      href: "https://automatic.chat",
-      dates: "April 2023 - March 2024",
+      title: "Hyperspectral image processing at scale",
       active: true,
       description:
-        "Developed an AI Customer Support Chatbot which automatically responds to customer support tickets using the latest GPT models.",
+        "Hyperspectral imagery, radiometric & geometric image calibration, reflectance, band models",
       technologies: [
-        "Next.js",
-        "Typescript",
-        "PostgreSQL",
-        "Prisma",
-        "TailwindCSS",
-        "Shadcn UI",
-        "Magic UI",
-        "Stripe",
-        "Cloudflare Workers",
+        "Python",
+        "Rasterio",
+        "Xarray",
+        "Scikit-learn",
+        "Dask",
+        "Kedro",
+        "Zarr", 
+        "Docker",
+        "AWS",
+        "Airflow",
+        "Terraform"
       ],
       links: [
         {
-          type: "Website",
-          href: "https://automatic.chat",
+          type: "Case study",
+          slug: "hello-world",
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: "",
-      video:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/automatic-chat.mp4",
+      image: "/images/hyperspectral-stack.png",
+      video: "",
     },
   ],
   hackathons: [
