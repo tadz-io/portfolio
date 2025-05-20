@@ -4,6 +4,7 @@ import Link from "next/link";
 
 interface Props {
   title: string;
+  company: string;
   description: string;
   dates: string;
   location: string;
@@ -17,6 +18,7 @@ interface Props {
 
 export function HackathonCard({
   title,
+  company,
   description,
   dates,
   location,
@@ -25,10 +27,10 @@ export function HackathonCard({
 }: Props) {
   return (
     <li className="relative ml-10 py-4">
-      <div className="absolute -left-16 top-2 flex items-center justify-center bg-white rounded-full">
-        <Avatar className="border size-12 m-auto">
-          <AvatarImage src={image} alt={title} className="object-contain" />
-          <AvatarFallback>{title[0]}</AvatarFallback>
+      <div className="absolute -left-16 top-2 flex items-center justify-center rounded-full">
+        <Avatar className="size-12 m-auto">
+          <AvatarImage src={image} alt={company} className="object-contain" />
+          {/* <AvatarFallback>{title[0]}</AvatarFallback> */}
         </Avatar>
       </div>
       <div className="flex flex-1 flex-col justify-start gap-1">
@@ -36,11 +38,14 @@ export function HackathonCard({
           <time className="text-xs text-muted-foreground">{dates}</time>
         )}
         <h2 className="font-semibold leading-none">{title}</h2>
+        {company && (
+          <p className="text-sm text-muted-foreground">{company}</p>
+        )}
         {location && (
           <p className="text-sm text-muted-foreground">{location}</p>
         )}
         {description && (
-          <span className="prose dark:prose-invert text-sm text-muted-foreground">
+          <span className="prose dark:prose-invert text-sm text-muted-foreground mt-2 whitespace-pre-line">
             {description}
           </span>
         )}

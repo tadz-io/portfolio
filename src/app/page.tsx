@@ -152,26 +152,26 @@ export default function Page() {
           </BlurFade>
         </div>
       </section>
-      <section id="work">
+      <section id="training">
         <div className="flex min-h-0 flex-col gap-y-3">
           <BlurFade delay={BLUR_FADE_DELAY * 5}>
-            <h2 className="text-xl font-bold">Work Experience</h2>
+            <h2 className="text-xl font-bold">Training</h2>
           </BlurFade>
-          {DATA.work.map((work, id) => (
+          {DATA.training.map((training, id) => (
             <BlurFade
-              key={work.company}
+              key={training.company}
               delay={BLUR_FADE_DELAY * 6 + id * 0.05}
             >
               <ResumeCard
-                key={work.company}
-                logoUrl={work.logoUrl}
-                altText={work.company}
-                title={work.company}
-                subtitle={work.title}
-                href={work.href}
-                badges={work.badges}
-                period={`${work.start} - ${work.end ?? "Present"}`}
-                description={work.description}
+                key={training.company}
+                logoUrl={training.logoUrl}
+                altText={training.company}
+                title={training.company}
+                subtitle={training.title}
+                href={training.href}
+                badges={training.badges}
+                period={`${training.start} - ${training.end ?? "Present"}`}
+                description={training.description}
               />
             </BlurFade>
           ))}
@@ -227,7 +227,7 @@ export default function Page() {
                 </h2>
                 <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                   During my time in university, I attended{" "}
-                  {DATA.hackathons.length}+ hackathons. People from around the
+                  {DATA.work.length}+ hackathons. People from around the
                   country would come together and build incredible things in 2-3
                   days. It was eye-opening to see the endless possibilities
                   brought to life by a group of motivated and passionate
@@ -238,13 +238,14 @@ export default function Page() {
           </BlurFade>
           <BlurFade delay={BLUR_FADE_DELAY * 14}>
             <ul className="mb-4 ml-4 divide-y divide-dashed border-l">
-              {DATA.hackathons.map((project, id) => (
+              {DATA.work.map((project, id) => (
                 <BlurFade
                   key={project.title + project.dates}
                   delay={BLUR_FADE_DELAY * 15 + id * 0.05}
                 >
                   <HackathonCard
                     title={project.title}
+                    company={project.company}
                     description={project.description}
                     location={project.location}
                     dates={project.dates}
