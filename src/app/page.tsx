@@ -120,7 +120,8 @@ export default function Page() {
           <BlurFade delay={BLUR_FADE_DELAY * 17}>
             <div className="flex justify-center"> {/* ADDED: flex justify-center wrapper */}
               <Link
-                href="#" // Replace with your actual scheduling link
+                href="https://calendly.com/tadzio-holtrop/30min"
+                target="_blank"
                 className="flex items-center justify-center rounded-full bg-red-400 text-white px-4 py-2 font-semibold hover:bg-red-300 transition-colors duration-200" 
               >
                 <Phone className="size-5 mr-2" /> {/* Phone Icon */}
