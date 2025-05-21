@@ -57,7 +57,7 @@ export async function getPost(slug: string) {
   try {
     source = fs.readFileSync(filePath, "utf-8");
   } catch (error) {
-    console.error(`Error reading file ${filePath}:`, error);
+    // console.error(`Error reading file ${filePath}:`, error);
     return null; // Or throw an error, or handle as "not found"
   }
 
@@ -70,10 +70,10 @@ export async function getPost(slug: string) {
     ...frontmatter, // Spread the fields from frontmatter
   };
 
-  // Find the corresponding project in DATA.projects by slug
-  // Ensure the project object actually has a 'slug' property before comparing
+  // Find the corresponding project in DATA.projects by its href
+  const expectedBlogHref = `/blog/${slug}`;
   const project = DATA.projects.find(
-    (p) => "slug" in p && p.slug === slug
+    (p) => p.href === expectedBlogHref
   );
 
   if (project) {
