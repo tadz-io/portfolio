@@ -10,7 +10,7 @@ export const DATA = {
   description:
     "Geospatial Data Scientist with 8+ years of experience, passionate about leveraging remote sensing technology to address planetary challenges",
   summary:
-    "I have a broad interest in the application of geospatial and remote sensing technologies to address environmental and societal challenges at scale. My background is in Remote Sensing & Oceanography, but since then I have branched out into data science, geospatial analysis, and software development. I’m particularly excited by the convergence of physics-based simulations (especially radiative transfer), remote sensing and machine learning. Take a look at my portfolio, and if you’d like to collaborate, please don’t hesitate to get in touch!",
+    "I have a broad interest in the application of geospatial and remote sensing technologies to address environmental and societal challenges at scale. My background is in [Remote Sensing & Oceanography](#work), but since then I have branched out into data science, geospatial analysis, and software development. I’m particularly excited by the convergence of physics-based simulations (especially radiative transfer), remote sensing and machine learning. Take a look at my portfolio, and if you’d like to collaborate, please don’t hesitate to get in [touch!](#contact)",
   avatarUrl: "",
   skills: [
     "python",
@@ -194,7 +194,7 @@ export const DATA = {
       active: true,
       dates: "",
       href: "/blog/advancing-water-quality-monitoring-space",
-      type: "Case study",
+      type: "Read case study",
       description:
         "Optical satellite imagery is used to monitor water quality from space. On behalf of a client, I implemented a physics-based inversion model to derive indicators such as chlorophyll-a from ESA Sentinel-2 satellite. The analysis focused on lakes and rivers in Germany and the United States.",
       technologies: [

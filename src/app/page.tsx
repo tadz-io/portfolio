@@ -1,5 +1,5 @@
 import { HackathonCard } from "@/components/hackathon-card";
-import { Phone } from 'lucide-react';
+import { Phone } from "lucide-react";
 import BlurFade from "@/components/magicui/blur-fade";
 import BlurFadeText from "@/components/magicui/blur-fade-text";
 import { ProjectCard } from "@/components/project-card";
@@ -210,7 +210,7 @@ export default function Page() {
                   To learn is to grow. To teach is to give
                 </h2>
                 <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Here you'll find a selection of workshops and training sessions I've attended, events where I've presented my work to wider audiences, and courses and workshops I've taught.
+                  Here you&apos;ll find a selection of workshops and training sessions I&apos;ve attended, events where I&apos;ve presented my work to wider audiences, and courses and workshops I&apos;ve taught.
                 </p>
               </div>
             </div>
