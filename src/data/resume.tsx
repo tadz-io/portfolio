@@ -140,7 +140,7 @@ export const DATA = {
       badges: [],
       location: "Rotterdam, The Netherlands",
       title: "Statistical Learning and Data Science",
-      logoUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlu-hAl_H7BWPSkRgRKLe13BKiuV0bpp0wag&s",
+      logoUrl: "/tinbergen-edu.jpg",
       start: "May 2017",
       description:
         `Course on <a href="https://tinbergen.nl/event/2017/05/10/9238/statistical-learning-and-data-science" class="font-bold underline">Statistical Learning and Data Science</a>, taught by renowned statistician Trevor Hastie`
@@ -161,6 +161,7 @@ export const DATA = {
       school: "University of Queensland",
       href: "https://www.uq.edu.au/",
       location: "Brisbane, Queensland, Australia",
+      description: "",
       degree: "MSc. Internship",
       logoUrl: "/uq-edu.jpg",
       start: "2015",
@@ -170,6 +171,7 @@ export const DATA = {
       school: "University of Amsterdam",
       href: "https://www.uva.nl/",
       location: "Amsterdam, The Netherlands",
+      description: "",
       degree: "BSc. Neuroscience",
       logoUrl: "/uva-work.jpg",
       start: "2006",
@@ -179,6 +181,7 @@ export const DATA = {
       school: "Technical University Twente",
       href: "https://www.utwente.nl/en/",
       location: "Enschede, The Netherlands",
+      description: "",
       degree: "Applied Physics",
       logoUrl: "/utwente-edu.jpg",
       start: "2005",
