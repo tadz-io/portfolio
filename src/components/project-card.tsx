@@ -10,11 +10,13 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import Markdown from "react-markdown";
+import { Icons } from "@/components/icons";
 
 interface Props {
   title: string;
-  href: string; // This is the main link for the card (image/video/title), determined by the parent page
+  href: string; 
   description: string;
+  type: string;
   dates: string;
   tags: readonly string[];
   printLink?: string; // For the print-visible link (previously `link`)
@@ -24,14 +26,14 @@ interface Props {
     icon?: React.ReactNode;
     type: string;    // Text for the button
     href?: string;    // URL for this specific button, OR
-    slug?: string;    // Slug for this specific button (links to /blog/slug)
   }[];
   className?: string;
 }
 
 export function ProjectCard({
   title,
-  href, // Main link for the card, determined by parent
+  href,
+  type,
   description,
   dates,
   tags,
@@ -41,27 +43,6 @@ export function ProjectCard({
   links, // This is for footer buttons
   className,
 }: Props) {
-  let imageLinkHref = href; // Default to the main card href
-
-  if (links && links.length > 0) {
-    const caseStudyLink = links.find(link => link.type === "Case study");
-    const websiteLink = links.find(link => link.type === "Website");
-
-    if (caseStudyLink) {
-      if (caseStudyLink.slug) {
-        imageLinkHref = `/blog/${caseStudyLink.slug}`;
-      } else if (caseStudyLink.href) {
-        imageLinkHref = caseStudyLink.href;
-      }
-    } else if (websiteLink) {
-      if (websiteLink.slug) {
-        imageLinkHref = `/blog/${websiteLink.slug}`;
-      } else if (websiteLink.href) {
-        imageLinkHref = websiteLink.href;
-      }
-    }
-  }
-
   return (
     <Card
       className={
@@ -69,8 +50,10 @@ export function ProjectCard({
       }
     >
       <Link
-        href={imageLinkHref} // Main card link (image/video area)
+        href={href}
         className={cn("block cursor-pointer", className)}
+        target={href.startsWith("/") || href.startsWith("#") ? "_self" : "_blank"}
+        rel={href.startsWith("/") || href.startsWith("#") ? "" : "noopener noreferrer"}
       >
         {video && (
           <video
@@ -122,40 +105,33 @@ export function ProjectCard({
         )}
       </CardContent>
       <CardFooter className="px-2 pb-2 pt-1">
-        {links && links.length > 0 && (
-          <div className="flex flex-row flex-wrap items-start gap-1">
-            {links.map((itemLink, idx) => {
-              let determinedHref: string;
-              let determinedTarget: string = "_blank"; // Default to new tab for external links
+        <div className="flex flex-row flex-wrap items-start gap-1">
+          {/* Primary Button */}
+          <Link 
+            href={href} 
+            target={href.startsWith("/") || href.startsWith("#") ? "_self" : "_blank"}
+            rel={href.startsWith("/") || href.startsWith("#") ? "" : "noopener noreferrer"}
+          >
+            <Badge className="flex gap-2 px-2 py-1 text-[10px] items-center">
+              <Icons.globe className="size-3"/>
+              {type} {/* Use the new top-level 'type' prop for button text */}
+            </Badge>
+          </Link>
 
-              if (itemLink.slug) {
-                determinedHref = `/blog/${itemLink.slug}`;
-                determinedTarget = "_self"; // Internal blog link
-              } else if (itemLink.href) {
-                determinedHref = itemLink.href;
-                // Check if it's an internal site link (starts with / or #)
-                if (determinedHref.startsWith("/") || determinedHref.startsWith("#")) {
-                  determinedTarget = "_self";
-                }
-                // Else, it's external, target remains "_blank"
-              } else {
-                // Fallback if neither slug nor href is provided for a button link
-                // You might want to not render the button or log an error
-                determinedHref = "#";
-                determinedTarget = "_self";
-              }
-
-              return (
-                <Link href={determinedHref} key={idx} target={determinedTarget} rel="noopener noreferrer">
+          {/* Additional Buttons from links array */}
+          {links && links.length > 0 && (
+            links.map((itemLink, idx) => {
+              return itemLink.href ? (
+                <Link href={itemLink.href} key={idx} target="_blank">
                   <Badge className="flex gap-2 px-2 py-1 text-[10px] items-center">
                     {itemLink.icon}
-                    {itemLink.type} {/* This is now just the button text */}
+                    {itemLink.type} {/* This is the button text from the links array item */}
                   </Badge>
                 </Link>
-              );
-            })}
-          </div>
-        )}
+              ) : null;
+            })
+          )}
+        </div>
       </CardFooter>
     </Card>
   );

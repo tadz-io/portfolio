@@ -193,7 +193,8 @@ export const DATA = {
       title: "Advancing water quality monitoring from space",
       active: true,
       dates: "",
-      slug: "hello-world",
+      href: "/blog/hello-world",
+      type: "Case study",
       description:
         "Optical satellite imagery is used to monitor water quality from space. On behalf of a client, I implemented a physics-based inversion model to derive indicators such as chlorophyll-a from ESA Sentinel-2 satellite. The analysis focused on lakes and rivers in Germany and the United States.",
       technologies: [
@@ -204,13 +205,7 @@ export const DATA = {
         "Pandas",
         "Docker",
       ],
-      links: [
-        {
-          type: "Case study",
-          slug: "hello-world",
-          icon: <Icons.globe className="size-3" />,
-        },
-      ],
+      links: [],
       image: "https://deims.org/sites/default/files/styles/full_size/public/photos/lake-stechlin-germany_6405.jpg",
       video: "",
     },
@@ -218,6 +213,8 @@ export const DATA = {
       title: "Underwater hyperspectral imaging",
       active: true,
       dates: "",
+      href: "https://ihr.iho.int/articles/closing-the-data-gap-automated-seafloor-health-maps-to-accelerate-nature-based-solutions/",
+      type: "Read article",
       description:
         "In this article, we describe the use of underwater RGB and hyperspectral imaging to map the seafloor at centimeter-scale resolution. From the ingestion of raw data to insights into biodiversity, biomass and ecosystem health. This technology demonstrates the potential for precise, large-scale carbon assessment of aquatic ecosystems.",
       technologies: [
@@ -232,19 +229,15 @@ export const DATA = {
         "AWS",
         "Airflow",
       ],
-      links: [
-        {
-          type: "Website",
-          href: "https://ihr.iho.int/articles/closing-the-data-gap-automated-seafloor-health-maps-to-accelerate-nature-based-solutions/",
-          icon: <Icons.globe className="size-3" />,
-        },
-      ],
+      links: [],
       image: "/images/planblue-hsi.jpg",
       video: "",
     },
     {
       title: "Physics-based inverse modelling of multi- and hyperspectral observations",
       active: true,
+      href: "https://www.mdpi.com/2072-4292/13/15/3006",
+      type: "Read paper",
       dates: "",
       description:
         "A scientific paper published during my PhD, presenting the development and validation of a physics-based model for both forward and inverse simulations. The model enables the simulation of optical signals measured by multi- and hyperspectral ocean-observing satellites.",
@@ -258,11 +251,6 @@ export const DATA = {
       ],
       links: [
         {
-          type: "Website",
-          href: "https://www.mdpi.com/2072-4292/13/15/3006",
-          icon: <Icons.globe className="size-3" />,
-        },
-        {
           type: "Source",
           href: "https://github.com/tadz-io/hydropt",
           icon: <Icons.github className="size-3" />,
@@ -274,6 +262,8 @@ export const DATA = {
     {
       title: "Hyperspectral image processing at scale",
       active: true,
+      href: "/blog/hyperspectral-imaging-scale",
+      type: "Read case study",
       dates: "",
       description:
         "In this article, I outline the steps involved in processing large volumes of hyperspectral data, including the essential groundwork required before the data can be used for further analysis. The work focuses on implementing radiometric, geometric and water column correction models.",
@@ -290,13 +280,7 @@ export const DATA = {
         "Airflow",
         "Terraform"
       ],
-      links: [
-        {
-          type: "Case study",
-          slug: "hello-world",
-          icon: <Icons.globe className="size-3" />,
-        },
-      ],
+      links: [],
       image: "/images/hyperspectral-stack.png",
       video: "",
     },
