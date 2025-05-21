@@ -11,7 +11,7 @@ export const DATA = {
     "Geospatial Data Scientist with 8+ years of experience, passionate about leveraging remote sensing technology to address planetary challenges",
   summary:
     "I have a broad interest in the application of geospatial and remote sensing technologies to address environmental and societal challenges at scale. My background is in [Remote Sensing & Oceanography](#work), but since then I have branched out into data science, geospatial analysis, and software development. I’m particularly excited by the convergence of physics-based simulations (especially radiative transfer), remote sensing and machine learning. Take a look at my portfolio, and if you’d like to collaborate, please don’t hesitate to get in [touch!](#contact)",
-  avatarUrl: "",
+  avatarUrl: "/profile-picture.png",
   skills: [
     "python",
     "xarray",
