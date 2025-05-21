@@ -34,7 +34,7 @@ export const DATA = {
   ],
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
-    { href: "/blog", icon: NotebookIcon, label: "Blog" },
+    { href: "#projects", icon: NotebookIcon, label: "Articles" },
   ],
   contact: {
     email: "hello@example.com",
@@ -195,7 +195,7 @@ export const DATA = {
       dates: "",
       slug: "hello-world",
       description:
-        "...",
+        "Optical satellite imagery is used to monitor water quality from space. On behalf of a client, I implemented a physics-based inversion model to derive indicators such as chlorophyll-a from ESA Sentinel-2 satellite. The analysis focused on lakes and rivers in Germany and the United States.",
       technologies: [
         "Python",
         "Lmfit",
@@ -219,7 +219,7 @@ export const DATA = {
       active: true,
       dates: "",
       description:
-        "Designed, developed and sold animated UI components for developers.",
+        "In this article, we describe the use of underwater RGB and hyperspectral imaging to map the seafloor at centimeter-scale resolution. From the ingestion of raw data to insights into biodiversity, biomass and ecosystem health. This technology demonstrates the potential for precise, large-scale carbon assessment of aquatic ecosystems.",
       technologies: [
         "Python",
         "Rasterio",
@@ -247,7 +247,7 @@ export const DATA = {
       active: true,
       dates: "",
       description:
-        "HYDROPT, open source, ocean color,...",
+        "A scientific paper published during my PhD, presenting the development and validation of a physics-based model for both forward and inverse simulations. The model enables the simulation of optical signals measured by multi- and hyperspectral ocean-observing satellites.",
       technologies: [
         "Python",
         "Lmfit",
@@ -276,7 +276,7 @@ export const DATA = {
       active: true,
       dates: "",
       description:
-        "Hyperspectral imagery, radiometric & geometric image calibration, reflectance, band models",
+        "In this article, I outline the steps involved in processing large volumes of hyperspectral data, including the essential groundwork required before the data can be used for further analysis. The work focuses on implementing radiometric, geometric and water column correction models.",
       technologies: [
         "Python",
         "Rasterio",
