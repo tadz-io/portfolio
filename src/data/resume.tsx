@@ -318,7 +318,7 @@ export const DATA = {
       title: "Data Scientist & Geospatial Consultant",
       company: "Planblue GmbH",
       dates: "Feb 2024 - Apr 2025",
-      location: "Bremen, Germany",
+      location: "🇩🇪 Bremen, Germany",
       description:
         `• Implemented automated validation workflows and quality control for raw sensor data and end-user data products.
         
@@ -335,7 +335,7 @@ export const DATA = {
       title: "Senior Data Scientist",
       company: "Planblue GmbH",
       dates: "Jun 2022 - Jan 2024",
-      location: "Bremen, Germany",
+      location: "🇩🇪 Bremen, Germany",
       description:
         `• Led the design and development of processing pipelines for hyperspectral imagery, transforming raw data into analysis-ready products
         
@@ -353,7 +353,7 @@ export const DATA = {
       title: "Remote Sensing Consultant",
       company: "Gybe (Flying Gybe Inc.)",
       dates: "Nov 2021 - Mar 2022",
-      location: "Portland, Oregon, United States",
+      location: "🇺🇸 Portland, Oregon, United States",
       description:
       `• Implementation of a physics based retrieval framework (HYDROPT) for the retrieval of water-quality parameters. 
 
@@ -363,13 +363,60 @@ export const DATA = {
       `,
       image:
         "/gybe-work.png",
+    },
+    {
+      title: "PhD Remote Sensing & Oceanography",
+      company: "Vrije Universiteit Amsterdam",
+      dates: "Oct 2016 - Feb 2021",
+      location: "🇳🇱 Amsterdam, The Netherlands",
+      description:
+      `• Developed and validated a physics-based inversion framework for multi- and hyperspectral sensors (HYDROPT)
+
+      • Developed processing pipelines for hyperspectral radiative transfer simulations
+
+      • Published research and presented at international conferences.
+      `,
+      image:
+        "/vu-work.jpg",
       links: [
         {
           title: "Hydropt",
           icon: <Icons.github className="h-4 w-4" />,
           href: "https://github.com/tadz-io/hydropt",
         },
+        {
+          title: "Ocean Sciences 2020",
+          icon: <Icons.globe className="h-4 w-4" />,
+          href: "https://agu.confex.com/agu/osm20/meetingapp.cgi/Paper/651689",
+        },
+        {
+          title: "EARSeL Imaging Spectroscopy",
+          icon: <Icons.globe className="h-4 w-4" />,
+          href: "https://is.earsel.org/workshop/12-IS-Potsdam2022/",
+        },
       ],
+    },
+    {
+      title: "Guest Researcher",
+      company: "University of Amsterdam",
+      dates: "Oct 2016 - Feb 2021",
+      location: "🇳🇱 Amsterdam, The Netherlands",
+      description:
+      `• PhD guest researcher conducting research on in-water radiative transfer and bio-optical models
+      `,
+      image:
+        "/uva-work.jpg",
+    },
+    {
+      title: "Visiting Research Scientist",
+      company: "Scripps Institution of Oceanography",
+      dates: "Mar 2020 - Jun 2020",
+      location: "🇺🇸 La Jolla Shores, California, United States",
+      description:
+      `• On-going development of a physics based retrieval algorithm for satellite ocean color applications
+      `,
+      image:
+        "/scripps-work.png",
     },
   ],
 } as const;
