@@ -193,7 +193,7 @@ export const DATA = {
       title: "Advancing water quality monitoring from space",
       active: true,
       dates: "",
-      href: "/blog/hello-world",
+      href: "/blog/advancing-water-quality-monitoring-space",
       type: "Case study",
       description:
         "Optical satellite imagery is used to monitor water quality from space. On behalf of a client, I implemented a physics-based inversion model to derive indicators such as chlorophyll-a from ESA Sentinel-2 satellite. The analysis focused on lakes and rivers in Germany and the United States.",
@@ -262,7 +262,7 @@ export const DATA = {
     {
       title: "Hyperspectral image processing at scale",
       active: true,
-      href: "/blog/hyperspectral-imaging-scale",
+      href: "/blog/hyperspectral-image-processing-at-scale",
       type: "Read case study",
       dates: "",
       description:
