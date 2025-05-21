@@ -158,36 +158,36 @@ export const DATA = {
   ],
   education: [
     {
-      school: "Buildspace",
-      href: "https://buildspace.so",
-      degree: "s3, s4, sf1, s5",
-      logoUrl: "/buildspace.jpg",
-      start: "2023",
-      end: "2024",
-    },
-    {
-      school: "University of Waterloo",
-      href: "https://uwaterloo.ca",
-      degree: "Bachelor's Degree of Computer Science (BCS)",
-      logoUrl: "/waterloo.png",
-      start: "2016",
-      end: "2021",
-    },
-    {
-      school: "Wilfrid Laurier University",
-      href: "https://wlu.ca",
-      degree: "Bachelor's Degree of Business Administration (BBA)",
-      logoUrl: "/laurier.png",
-      start: "2016",
-      end: "2021",
-    },
-    {
-      school: "International Baccalaureate",
-      href: "https://ibo.org",
-      degree: "IB Diploma",
-      logoUrl: "/ib.png",
-      start: "2012",
+      school: "University of Amsterdam",
+      href: "",
+      degree: "MSc. Oceanography",
+      logoUrl: "/uva-work.jpg",
+      start: "2013",
       end: "2016",
+    },
+    {
+      school: "University of Queensland",
+      href: "",
+      degree: "MSc. Internship",
+      logoUrl: "/uq-edu.jpg",
+      start: "2015",
+      end: "2015",
+    },
+    {
+      school: "University of Amsterdam",
+      href: "",
+      degree: "BSc. Neuroscience",
+      logoUrl: "/uva-work.jpg",
+      start: "2006",
+      end: "2009",
+    },
+    {
+      school: "Technical University Twente",
+      href: "",
+      degree: "Applied Physics",
+      logoUrl: "/utwente-edu.jpg",
+      start: "2005",
+      end: "2006",
     },
   ],
   projects: [
@@ -363,6 +363,7 @@ export const DATA = {
       `,
       image:
         "/gybe-work.png",
+      links: []
     },
     {
       title: "PhD Remote Sensing & Oceanography",
@@ -406,6 +407,7 @@ export const DATA = {
       `,
       image:
         "/uva-work.jpg",
+      links: [],
     },
     {
       title: "Visiting Research Scientist",
@@ -417,6 +419,7 @@ export const DATA = {
       `,
       image:
         "/scripps-work.png",
+      links: [],
     },
   ],
 } as const;
