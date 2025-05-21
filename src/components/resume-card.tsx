@@ -17,6 +17,7 @@ interface ResumeCardProps {
   href?: string;
   badges?: readonly string[];
   period: string;
+  location?: string;
   description?: string;
 }
 export const ResumeCard = ({
@@ -27,35 +28,36 @@ export const ResumeCard = ({
   href,
   badges,
   period,
+  location,
   description,
 }: ResumeCardProps) => {
   const [isExpanded, setIsExpanded] = React.useState(false);
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-    if (description) {
+    if (description || location) {
       e.preventDefault();
       setIsExpanded(!isExpanded);
     }
   };
 
   return (
-    <Link
-      href={href || "#"}
-      className="block cursor-pointer mt-2"
-      onClick={handleClick}
-    >
-      <Card className="flex">
-        <div className="flex-none">
-          <Avatar className="size-12 m-auto bg-muted-background">
-            <AvatarImage
-              src={logoUrl}
-              alt={altText}
-              className="object-contain"
-            />
-            <AvatarFallback>{altText[0]}</AvatarFallback>
-          </Avatar>
-        </div>
-        <div className="flex-grow ml-4 items-center flex-col group">
+    <Card className="flex">
+      <div className="flex-none">
+        <Avatar className="size-12 m-auto bg-muted-background">
+          <AvatarImage
+            src={logoUrl}
+            alt={altText}
+            className="object-contain"
+          />
+          <AvatarFallback>{altText[0]}</AvatarFallback>
+        </Avatar>
+      </div>
+      <div className="flex-grow ml-4 items-center flex-col group">
+        <Link
+          href={href || "#"}
+          className="block cursor-pointer mt-2"
+          onClick={handleClick}
+        >
           <CardHeader>
             <div className="flex items-center justify-between gap-x-2 text-base">
               <h3 className="inline-flex items-center justify-center font-semibold leading-none text-xs sm:text-sm">
@@ -86,25 +88,32 @@ export const ResumeCard = ({
             </div>
             {subtitle && <div className="font-sans text-xs">{subtitle}</div>}
           </CardHeader>
-          {description && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{
-                opacity: isExpanded ? 1 : 0,
-
-                height: isExpanded ? "auto" : 0,
-              }}
-              transition={{
-                duration: 0.7,
-                ease: [0.16, 1, 0.3, 1],
-              }}
-              className="mt-2 text-xs sm:text-sm whitespace-pre-line"
-            >
-              {description}
-            </motion.div>
-          )}
-        </div>
-      </Card>
-    </Link>
+        </Link>
+        {(description || location) && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{
+              opacity: isExpanded ? 1 : 0,
+              height: isExpanded ? "auto" : 0,
+            }}
+            transition={{
+              duration: 0.7,
+              ease: [0.16, 1, 0.3, 1],
+            }}
+            className="mt-2 text-xs sm:text-sm whitespace-pre-line"
+          >
+            {location && (
+              <div className="mb-1 text-xs text-muted-foreground">
+                {location}
+              </div>
+            )}
+            {description && (
+              // Use dangerouslySetInnerHTML for the description
+              <div dangerouslySetInnerHTML={{ __html: description }} />
+            )}
+          </motion.div>
+        )}
+      </div>
+    </Card>
   );
 };

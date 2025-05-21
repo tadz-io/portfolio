@@ -194,6 +194,8 @@ export default function Page() {
                 href={education.href}
                 logoUrl={education.logoUrl}
                 altText={education.school}
+                location={education.location}
+                description={education.description}
                 title={education.school}
                 subtitle={education.degree}
                 period={`${education.start} - ${education.end}`}
@@ -201,8 +203,22 @@ export default function Page() {
             </BlurFade>
           ))}
         </div>
+      <section id="skills">
+        <div className="flex min-h-0 flex-col gap-y-3">
+          <BlurFade delay={BLUR_FADE_DELAY * 9}>
+            <h2 className="text-xl font-bold">Skills</h2>
+          </BlurFade>
+          <div className="flex flex-wrap gap-1">
+            {DATA.skills.map((skill, id) => (
+              <BlurFade key={skill} delay={BLUR_FADE_DELAY * 10 + id * 0.05}>
+                <Badge key={skill}>{skill}</Badge>
+              </BlurFade>
+            ))}
+          </div>
+        </div>
       </section>
-      <section id="education">
+      </section>
+      <section id="training-intro">
           <BlurFade delay={BLUR_FADE_DELAY * 13}>
             <div className="flex flex-col items-center justify-center space-y-4 text-center py-12">
               <div className="space-y-2">
@@ -219,20 +235,6 @@ export default function Page() {
             </div>
           </BlurFade>
       </section>
-      <section id="skills">
-        <div className="flex min-h-0 flex-col gap-y-3">
-          <BlurFade delay={BLUR_FADE_DELAY * 9}>
-            <h2 className="text-xl font-bold">Skills</h2>
-          </BlurFade>
-          <div className="flex flex-wrap gap-1">
-            {DATA.skills.map((skill, id) => (
-              <BlurFade key={skill} delay={BLUR_FADE_DELAY * 10 + id * 0.05}>
-                <Badge key={skill}>{skill}</Badge>
-              </BlurFade>
-            ))}
-          </div>
-        </div>
-      </section>
       <section id="training">
         <div className="flex min-h-0 flex-col gap-y-3">
           <BlurFade delay={BLUR_FADE_DELAY * 5}>
@@ -247,11 +249,12 @@ export default function Page() {
                 key={training.company}
                 logoUrl={training.logoUrl}
                 altText={training.company}
-                title={training.company}
-                subtitle={training.title}
+                title={training.title}
+                subtitle={training.company}
+                location={training.location}
                 href={training.href}
                 badges={training.badges}
-                period={`${training.start} - ${training.end ?? "Present"}`}
+                period={`${training.start}`}
                 description={training.description}
               />
             </BlurFade>

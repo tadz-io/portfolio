@@ -13,17 +13,24 @@ export const DATA = {
     "I have a broad interest in the application of geospatial and remote sensing technologies to address environmental and societal challenges at scale. My background is in Remote Sensing & Oceanography, but since then I have branched out into data science, geospatial analysis, and software development. I’m particularly excited by the convergence of physics-based simulations (especially radiative transfer), remote sensing and machine learning. Take a look at my portfolio, and if you’d like to collaborate, please don’t hesitate to get in touch!",
   avatarUrl: "",
   skills: [
-    "React",
-    "Next.js",
-    "Typescript",
-    "Node.js",
-    "Python",
-    "Go",
-    "Postgres",
-    "Docker",
-    "Kubernetes",
-    "Java",
-    "C++",
+    "python",
+    "xarray",
+    "numpy",
+    "scikit-learn",
+    "pytorch",
+    "rasterio",
+    "docker",
+    "geo-pandas",
+    "terraform",
+    "git",
+    "kedro",
+    "aws",
+    "airflow",
+    "plotly",
+    "dask",
+    "zarr",
+    "netcdf",
+    "c++"
   ],
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
@@ -72,40 +79,27 @@ export const DATA = {
 
   training: [
     {
-      company: "Planblue GmbH",
-      href: "https://www.planblue.com",
+      company: "European Space Agency (ESA)",
+      href: "https://hyperspectral2024.esa.int/",
       badges: [],
-      location: "Remote",
-      title: "Data Scientist & Geospatial consultant",
-      logoUrl: "/planblue-work.png",
-      start: "Feb 2024",
-      end: "Apr 2025",
+      location: "ESA ESTEC, Noordwijk, The Netherlands",
+      title: "3D Radiative Transfer Modelling workshop",
+      logoUrl: "/esa-edu.png",
+      start: "Nov 2024",
       description:
-        `• Implemented automated validation workflows and quality control for raw sensor data and end-user data products.
-        
-        • Specified requirements and implemented solutions for geospatial data processing and storage using Xarray and Zarr.
-
-        • Delivered analysis-ready geospatial data products as GIS compatible raster files
+        `Attended the 3D Radiative Transfer Modelling workshop as part of <a href="https://hyperspectral2024.esa.int/" target="_blank" rel="noopener noreferrer" class="font-bold underline">ESA's Spaceborne Imaging Spectroscopy</a> event in 2024
         `,
     },
     {
-      company: "Planblue GmbH",
-      href: "https://www.planblue.com",
+      company: "EARSeL & GFZ Potsdam",
+      href: "https://is.earsel.org/workshop/12-IS-Potsdam2022/",
       badges: [],
-      location: "Remote",
-      title: "Senior Data Scientist",
-      logoUrl: "/planblue-work.png",
+      location: "Potsdam, Germany",
+      title: "Hyperspectral processing routines for HySpex airborne data",
+      logoUrl: "/earsel-edu.png",
       start: "Jun 2022",
-      end: "Jan 2024",
       description:
-        `• Led the design and development of processing pipelines for hyperspectral imagery, transforming raw data into analysis-ready products
-        
-        • Spearheaded the acquisition of a new optical sensor, enabling our imaging system to derive precise spectral reflectance measurements
-
-        • Designed and conducted calibration and validation experiments to ensure accuracy and reliability of hyperspectral measurements
-
-        • Interfacing between data science, engineering and business teams
-        `,
+        `Attended workshop as part of <a href="https://is.earsel.org/workshop/12-IS-Potsdam2022/" target="_blank" rel="noopener noreferrer" class="font-bold underline">EARSeL's workshop on Imaging Spectroscopy in Potsdam</a>`,
     },
     {
       company: "Nvidia",
@@ -159,7 +153,9 @@ export const DATA = {
   education: [
     {
       school: "University of Amsterdam",
-      href: "",
+      href: "https://www.uva.nl/",
+      location: "Amsterdam, The Netherlands",
+      description: "",
       degree: "MSc. Oceanography",
       logoUrl: "/uva-work.jpg",
       start: "2013",
@@ -167,7 +163,8 @@ export const DATA = {
     },
     {
       school: "University of Queensland",
-      href: "",
+      href: "https://www.uq.edu.au/",
+      location: "Brisbane, Queensland, Australia",
       degree: "MSc. Internship",
       logoUrl: "/uq-edu.jpg",
       start: "2015",
@@ -175,7 +172,8 @@ export const DATA = {
     },
     {
       school: "University of Amsterdam",
-      href: "",
+      href: "https://www.uva.nl/",
+      location: "Amsterdam, The Netherlands",
       degree: "BSc. Neuroscience",
       logoUrl: "/uva-work.jpg",
       start: "2006",
@@ -183,7 +181,8 @@ export const DATA = {
     },
     {
       school: "Technical University Twente",
-      href: "",
+      href: "https://www.utwente.nl/en/",
+      location: "Enschede, The Netherlands",
       degree: "Applied Physics",
       logoUrl: "/utwente-edu.jpg",
       start: "2005",
