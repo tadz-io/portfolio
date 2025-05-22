@@ -1,3 +1,5 @@
+Adapted from [Dillion Verma's](https://github.com/dillionverma/portfolio) repository. 
+
 Built with next.js, [shadcn/ui](https://ui.shadcn.com/), and [magic ui](https://magicui.design/), deployed on Vercel.
 
 # Features
