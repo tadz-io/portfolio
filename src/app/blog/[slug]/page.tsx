@@ -111,7 +111,7 @@ export default async function BlogPostPage({
                   )}
                   {metadata.services && (
                     <div className="flex items-center">
-                      <strong className="font-semibold mr-1.5">Services:</strong> {/* Reduced mr for tighter label */}
+                      <strong className="font-semibold mr-1.5">Services used:</strong> {/* Reduced mr for tighter label */}
                       <span>{metadata.services}</span>
                     </div>
                   )}
@@ -154,7 +154,7 @@ export default async function BlogPostPage({
       <section id="post-content">
         <BlurFade delay={BLUR_FADE_DELAY * 3}>
           <article
-            className="px-8 prose text-pretty font-sans text-md text-muted-foreground dark:prose-invert mx-auto" 
+            className="px-8 prose text-pretty font-sans text-md text-muted-foreground dark:prose-invert mx-center max-w-xl" 
             dangerouslySetInnerHTML={{ __html: post.source }}
           />
         </BlurFade>
