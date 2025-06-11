@@ -7,16 +7,28 @@ summary: "Optical satellite imagery is used to monitor water quality from space.
 stack: [Python, Lmfit, Scikit-learn, Xarray, Pandas, Docker]
 ---
 
+<figure class="float-left mr-4 my-4 mb-0 w-[300px]">
+  <img
+    src="/images/sentinel-2.jpg"
+    alt="Sentinel-2 instrument"
+    className="rounded-lg w-full h-auto"
+  />
+  <figcaption class="text-xs text-muted-foreground text-left mt-2">
+    <b>Figure 1:</b> Sentinel-2 instrument (ESA)
+  </figcaption>
+</figure>
+
 Monitoring harmful algal blooms is essential to protect public health and inform governmental agencies and private organizations about potential adverse effects on water quality. For several decades, satellite sensors have provided synoptic observations of water quality across the globe. Variations in algal concentration and composition cause subtle changes in the color of a water body’s surface, which these sensors detect. Retrieval algorithms interpret the satellite-measured reflectances and convert them into meaningful water-quality metrics.
 
-<img 
-    align="left" 
-    src="/images/sentinel-2.jpg" 
-    alt="Sentinel-2 instrument" 
-    class="rounded-lg mr-4 my-4"
-    style="width: 300px; height: auto;"/>
 
 Many retrieval models rely on empirical models trained on large, global datasets of *in-situ* (ground-truth) measurements. Although these global models yield remarkable insights into broad patterns of algal distribution in the oceans, their generality does not always extend to site-specific areas such as coastal and inland waters. In such environments, increased optical complexity (e.g., high turbidity, variable dissolved organic matter) hampers accurate water-quality retrieval from satellite observations.
+
+<figure class="mt-0">
+    <img src="/images/lake-pyramid.apng"></img>
+  <figcaption class="text-xs text-muted-foreground text-left mt-0">
+    <b>Figure 2:</b> Sentinel-2 captured the development of a phytoplankton bloom in Lake Pyramid, Nevada, during a 3 week period in October 2024. Imagery was acquired during 7 seperate overpassess of Sentinel-2. The normalized difference chlorophyll index (NDCI) was used to visualize the changing patterns in the distribution of chlorophyll-a over time.
+  </figcaption>
+</figure>
 
 For one of my clients, I implemented the [HYDROPT model](https://github.com/tadz-io/hydropt) to improve water-quality retrieval for several lakes and rivers in Germany and the US. HYDROPT is a physics-based inversion model grounded in radiative transfer theory. It uses the full measured remote-sensing reflectance spectrum to simultaneously retrieve multiple water-quality parameters: chlorophyll-a concentration, suspended particulate matter, and dissolved organic matter absorption.
 
