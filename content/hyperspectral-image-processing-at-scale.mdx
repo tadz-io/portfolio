@@ -51,7 +51,7 @@ I developed a scalable processing pipeline that ingests raw hyperspectral data c
 The pipeline performs several steps. First it applies radiometric calibration to correct for dark current and the sensor's quantum efficiency (<a href="#fig2">Figure 2</a>). Second, the geo-rectification processor maps the hyperspectral pixels to world coordinates, using geolocation estimates from the navigation sensors and photogrammetry process. Lastly, the hyperspectral data is corrected for the attenuation effects of the water column and normalized to the downwelling solar irradiance. 
 
 
-Pipeline throughput was significantly improved by leveraging `Dask`, `Xarray` and `Zarr` for batch and parallell processing of the data. Storage of data products in `Zarr` enabling easy querying and analysis directly from development environments such as `Jupyterlab`.  
+Pipeline throughput was significantly improved by leveraging `Dask`, `Xarray` and `Zarr` for batch and parallell processing of the data. Storage of data products in `Zarr` enables easy querying and analysis directly from development environments such as `Jupyterlab`.  
 
 ## Conclusion
 
