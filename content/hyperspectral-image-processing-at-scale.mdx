@@ -6,16 +6,17 @@ services: "Hyperspectral imaging, data pipelines, radiometric correction, water-
 summary: "I led the development and deployment of an end-to-end pipeline for underwater hyperspectral imagery at Planblue, cutting time-to-data from weeks to minutes. The pipeline automates radiometric calibration, geo-rectification and normalization of hyperspectral data cubes. This solution accelerates marine ecosystem surveys and analyses at scale."
 ---
 
-<figure class="float-left mr-4 my-4 mb-0 w-[300px]">
+<figure class="mx-auto my-4 w-[300px] md:float-left md:mr-4 md:mx-0">
   <img
     src="/images/pb-diveray.png"
     alt="Underwater hyperspectral imaging"
     className="rounded-lg w-full h-auto"
   />
-  <figcaption class="text-xs text-muted-foreground text-left mt-2">
+  <figcaption class="text-xs text-muted-foreground text-center mt-2 md:text-left">
     <b>Figure 1:</b> Underwater hyperspectral imaging platform
   </figcaption>
 </figure>
+
 Acquiring and processing underwater hyperspectral data for ecosystem surveys is a time-consuming task, often requiring weeks to months before the imagery is ready for downstream analysis. Furthermore, sensor characteristics and environmental conditions introduce variability in optical quality, complicating data reliability. For <a href="http://planblue.com" target="_blank">Planblue GmbH</a>, I developed and deployed fully automated processing pipelines that ingest raw hyperspectral data, apply extensive data quality checks, and deliver analysis-ready datasets, reducing the time-to-data from weeks to minutes.
 
 
@@ -36,17 +37,15 @@ Pipelines were containerized using `Docker` and deployed as separate microservic
 
 I developed a scalable processing pipeline that ingests raw hyperspectral data cubes and performs the necessary transformation to deliver high quality, standardarized data products making them ready for downstream analysis. 
 
-<div class="relative w-screen right-1/2 left-1/2 -mr-[50vw] -ml-[50vw] max-w-none my-8 mb-0" id="fig2">
-    <figure class="m-0">
-        <img
-            src="/images/kedro-pipeline.svg"
-            alt="Hyperspectral processing pipeline"
-            class="max-w-3xl mx-auto"/>
-        <figcaption class="text-xs text-muted-foreground text-center m-0 pt-1">
-            <b>Figure 2:</b> Kedro pipeline for processing of hyperspectral data cubes
-        </figcaption>
-    </figure>
-</div>
+<figure id="fig2">
+    <img
+        src="/images/kedro-pipeline.svg"
+        alt="Hyperspectral processing pipeline"
+        class="mx-auto md:max-w-xl"/>
+    <figcaption class="text-xs text-muted-foreground text-center m-0 pt-1">
+        <b>Figure 2:</b> Kedro pipeline for processing of hyperspectral data cubes
+    </figcaption>
+</figure>
 
 The pipeline performs several steps. First it applies radiometric calibration to correct for dark current and the sensor's quantum efficiency (<a href="#fig2">Figure 2</a>). Second, the geo-rectification processor maps the hyperspectral pixels to world coordinates, using geolocation estimates from the navigation sensors and photogrammetry process. Lastly, the hyperspectral data is corrected for the attenuation effects of the water column and normalized to the downwelling solar irradiance. 
 

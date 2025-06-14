@@ -55,12 +55,12 @@ export default async function BlogPostPage({
     notFound();
   }
 
-  const metadata = post.metadata as PostMetadata; // Cast to ensure type
+  const metadata = post.metadata as PostMetadata; 
 
   return (
-    <main className="flex flex-col min-h-[100dvh] space-y-10 px-4 md:px-0"> {/* Added padding for smaller screens */}
+    <main className="flex flex-col min-h-[100dvh] space-y-10">
       <section id="post-header" className="pt-8 md:pt-2">
-        <div className="space-y-4 text-center md:text-left"> {/* Increased space-y for visual separation */}
+        <div className="space-y-4 text-center md:text-left">
           <BlurFadeText
             delay={BLUR_FADE_DELAY}
             className="text-3xl font-bold tracking-tighter sm:text-4xl xl:text-5xl"
@@ -72,7 +72,7 @@ export default async function BlogPostPage({
           {(metadata.projectImage || metadata.projectVideo) && (
             <BlurFade 
               delay={BLUR_FADE_DELAY * 2}
-              className="pt-2 -mx-4 md:mx-0" 
+              className="pt-2" 
             >
               {metadata.projectVideo && (
                 <video
@@ -102,23 +102,23 @@ export default async function BlogPostPage({
           <BlurFade delay={BLUR_FADE_DELAY * 2.5}>
             <div className="text-sm text-muted-foreground space-y-2 pt-2">
               {(metadata.client || metadata.services) && (
-                <div className="flex flex-wrap items-center gap-x-6 gap-y-1"> {/* Use gap-x for horizontal spacing, gap-y for wrap */}
+                <div className="flex flex-wrap items-center gap-x-6 gap-y-1"> 
                   {metadata.client && (
                     <div className="flex items-center">
-                      <strong className="font-semibold mr-1.5">Client:</strong> {/* Reduced mr for tighter label */}
+                      <strong className="font-semibold mr-1.5">Client:</strong>
                       <span>{metadata.client}</span>
                     </div>
                   )}
                   {metadata.services && (
                     <div className="flex items-center">
-                      <strong className="font-semibold mr-1.5">Services:</strong> {/* Reduced mr for tighter label */}
+                      <strong className="font-semibold mr-1.5">Services used:</strong>
                       <span>{metadata.services}</span>
                     </div>
                   )}
                 </div>
               )}
               {metadata.stack && metadata.stack.length > 0 && (
-                <div className="flex items-start pt-1"> {/* Added pt-1 for slight separation if client/services wrapped */}
+                <div className="flex items-start pt-1"> 
                   <strong className="font-semibold mr-2 mt-0.5">Stack:</strong>
                   <div className="flex flex-wrap items-center gap-x-1.5 gap-y-1">
                     {metadata.stack.map((tech) => {
@@ -142,8 +142,8 @@ export default async function BlogPostPage({
 
       {/* Section for Post Summary - ADDED HERE */}
       {metadata.summary && (
-        <section id="post-summary" className="pt-2"> {/* Adjusted padding/margin as needed */}
-          <BlurFade delay={BLUR_FADE_DELAY * 2.75}> {/* Adjusted delay */}
+        <section id="post-summary" className="pt-2"> 
+          <BlurFade delay={BLUR_FADE_DELAY * 2.75}> 
             <p className="text-muted-foreground text-xl/relaxed text-pretty text-center md:text-left">
               {metadata.summary}
             </p>
@@ -154,7 +154,7 @@ export default async function BlogPostPage({
       <section id="post-content">
         <BlurFade delay={BLUR_FADE_DELAY * 3}>
           <article
-            className="px-8 prose text-pretty font-sans text-md text-muted-foreground dark:prose-invert mx-auto" 
+            className="prose text-pretty font-sans text-md text-muted-foreground dark:prose-invert mx-auto md:max-w-xl" 
             dangerouslySetInnerHTML={{ __html: post.source }}
           />
         </BlurFade>
