@@ -80,19 +80,19 @@ export const DATA = {
     {
       name: "Geospatial and Remote Sensing Analysis",
       subtitle: "Machine learning model development and inference for geospatial applications",
-      description: "I offer services in developing predictive models for geospatial applications. Including, but not limited to, retrieval models for multi- and hyperspectral satellite and airborne sensors, as well as multivariate prediction models for ecosystem assessment and climate projections.",
+      description: "I offer services in developing <b>predictive models</b> for <b>geospatial applications</b>. Including, but not limited to, <b>retrieval models</b> for multi- and hyperspectral satellite and airborne sensors, as well as multivariate prediction models for <b>ecosystem assessment</b> and <b>climate projections</b>.",
       logoUrl: "LucideBrainCircuit",
     },
     {
       name: "Software Development",
       subtitle: "Software development, data pipelines & cloud infrastructure for scalable geo-applications",
-      description: "Tailored software development and implementation services for the efficient processing and analysis of large-scale geospatial and remote sensing datasets.",
+      description: "<b>Tailored</b> software development and implementation services for the <b>efficient processing</b> and <b>analysis</b> of <b>large-scale</b> geospatial and remote sensing <b>datasets</b>.",
       logoUrl: "LucideCog",
     },
     {
       name: "Data Visualization",
       subtitle: "Interactive visualization solutions",
-      description: "I deliver visualization solutions to interpret, explore, and communicate geospatial data to clients, stakeholders, and students, ranging from interactive dashboards to fully rendered 3D visualizations.",
+      description: "I deliver visualization solutions to <b>interpret</b>, <b>explore</b>, and <b>communicate</b> geospatial data to clients, stakeholders, and students, ranging from <b>interactive dashboards</b> to fully <b>rendered 3D visualizations</b>.",
       logoUrl: "LucideEye",
     },
   ],

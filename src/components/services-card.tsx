@@ -69,10 +69,12 @@ export const ServicesCard = ({
 
   return (
     <Card className="flex">
-      <div className="flex-none">
-        <Avatar className="size-12 m-auto bg-muted-background flex items-center justify-center">
-            {renderLogoContent()}
-        </Avatar>
+      <div className="flex items-center">
+        <div className="flex-none">
+          <Avatar className="size-12 m-auto bg-muted-background flex items-center justify-center">
+              {renderLogoContent()}
+          </Avatar>
+        </div>
       </div>
       <div className="flex-grow ml-4 items-center flex-col group">
         <Link
