@@ -76,7 +76,26 @@ export const DATA = {
       },
     },
   },
-
+  services: [
+    {
+      name: "Geospatial and Remote Sensing Analysis",
+      subtitle: "Machine learning model development and inference for geospatial applications",
+      description: "I offer services in developing predictive models for geospatial applications. Including, but not limited to, retrieval models for multi- and hyperspectral satellite and airborne sensors, as well as multivariate prediction models for ecosystem assessment and climate projections.",
+      logoUrl: "LucideBrainCircuit",
+    },
+    {
+      name: "Software Development",
+      subtitle: "Software development, data pipelines & cloud infrastructure for scalable geo-applications",
+      description: "Tailored software development and implementation services for the efficient processing and analysis of large-scale geospatial and remote sensing datasets.",
+      logoUrl: "LucideCog",
+    },
+    {
+      name: "Data Visualization",
+      subtitle: "Interactive visualization solutions",
+      description: "I deliver visualization solutions to interpret, explore, and communicate geospatial data to clients, stakeholders, and students, ranging from interactive dashboards to fully rendered 3D visualizations.",
+      logoUrl: "LucideEye",
+    },
+  ],
   training: [
     {
       company: "European Space Agency (ESA)",
