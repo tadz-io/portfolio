@@ -1,8 +1,87 @@
 ---
 title: "Advancing water quality monitoring from space"
 publishedAt: "2025-05-21"
-client: ""
+client: "Gybe"
 services: "inverse modelling, model validation, image processing, Docker integration"
-summary: "COMING SOON"
+summary: "Optical satellite imagery is used to monitor water quality from space. On behalf of Gybe, I implemented a physics-based inversion model to derive water quality indicators such as chlorophyll-a from ESA's Sentinel-2 satellite. The analysis focused on lakes and rivers in Germany and the United States. "
+stack: [Python, Lmfit, Scikit-learn, Xarray, Pandas, Docker]
 ---
 
+<blockquote>
+  "It was pleasure to work with Tadzio on operationalizing a bio-optical regression model. He's a reliable peer and independent thinker, fluently bridging the gap between rigorous academic thinking and hands-on application of his wide range of skills."
+  <br>
+  <br>
+  <b>Dr. Philipp Grötsch (CTO Gybe)</b>
+</blockquote>
+
+<figure class="float-left mr-4 my-4 mb-0 w-[300px]">
+  <img
+    src="/images/sentinel-2.jpg"
+    alt="Sentinel-2 instrument"
+    className="rounded-lg w-full h-auto"
+  />
+  <figcaption class="text-xs text-muted-foreground text-left mt-2">
+    <b>Figure 1:</b> Sentinel-2 instrument (ESA)
+  </figcaption>
+</figure>
+
+Monitoring harmful algal blooms is essential to protect public health and inform governmental agencies and private organizations about potential adverse effects on water quality. For several decades, satellite sensors have provided synoptic observations of water quality across the globe. Variations in algal concentration and composition cause subtle changes in the color of a water body’s surface, which these sensors detect. Retrieval algorithms interpret the satellite-measured reflectances and convert them into meaningful water-quality metrics.
+
+
+Many retrieval models rely on empirical models trained on large, global datasets of *in-situ* (ground-truth) measurements. Although these global models yield remarkable insights into broad patterns of algal distribution in the oceans, their generality does not always extend to site-specific areas such as coastal and inland waters. In such environments, increased optical complexity (e.g., high turbidity, variable dissolved organic matter) hampers accurate water-quality retrieval from satellite observations.
+
+<figure class="mt-0">
+    <img src="/images/lake-pyramid.apng"></img>
+  <figcaption class="text-xs text-muted-foreground text-left mt-0">
+    <b>Figure 2:</b> Sentinel-2 captured the development of a phytoplankton bloom in Lake Pyramid, Nevada, during a 3 week period in October 2024. Imagery was acquired during 7 seperate overpassess of Sentinel-2. The normalized difference chlorophyll index (NDCI) was used to visualize the changing patterns in the distribution of chlorophyll-a over time.
+  </figcaption>
+</figure>
+
+For <a href="www.gybe.com" target="_blank">Gybe</a>, I implemented the open-source [HYDROPT model](https://github.com/tadz-io/hydropt) to improve water-quality retrievals for several lakes and rivers in Germany and the US. `HYDROPT` is a physics-based inversion model grounded in radiative transfer theory. It uses the full measured reflectance spectrum to simultaneously retrieve multiple water-quality parameters: chlorophyll-a concentration, suspended particulate matter, and dissolved organic matter absorption.
+
+
+## Methodology
+
+#### 1. Study sites and *in-situ* data
+- Two matchup sites were selected that include a major river in the US and a lake in Germany.
+- *in-situ* measurements were collected by local monitoring agencies and include chlorophyll-a, and turbidity measurements
+
+#### 2. Satellite data acquistion and preprocessing
+- Sentinel-2 Level-1B scenes covering match-up sites downloaded from data provider
+- `ACOLITE` was applied to L1B data for atmospheric correction to derive the remote sensing reflectance
+
+- Sentinel-2 MSI bands range from 10 m to 60 m spatial resolution; bands were resampled to common spatial resolution
+
+#### 3. HYDROPT model configuration
+- Model parameters were selected for Sentinel-2 bands in the visible domain (B1: 443 nm, B2: 493 nm, B3: 560 nm, B4: 665 nm, B5: 705 nm)
+- Selection of bio-optical models for phytoplankton, suspended matter and dissolved organic matter
+- Packaged `HYDROPT` and all dependencies into a `Docker` container for reproducibility and cloud-based processing.
+
+
+#### 4. Model run and validation
+
+- `HYDROPT` was applied on a subset of matchups to select the most appropriate bio-optical parameter sets for each site.
+
+- Processed the full image time series over the study periods.
+
+- Extracted `HYDROPT` retrievals at each matchup date and compared them to the corresponding *in-situ* data.
+
+- Computed performance metrics for chlorophyll-a, suspended matter and turbidity
+
+## Results
+
+`HYDROPT` was fully containerized for the client, enabling batch processing of Sentinel-2 scenes within a cloud-based workflow. Unlike most band-ratio algorithms, our solution allowed for the simultaneous retrieval of multiple water quality indicators, including chlorophyll-a, suspended matter concentration, absorption by colored dissolved organic matter (CDOM), and turbidity metrics.
+
+We found that, in the absence of site-specific *in-situ* measurements of the waterbody's optical properties, `HYDROPT` performs comparably to off-the-shelf band-ratio algorithms for chlorophyll-a retrievals. This highlights the opportunity to further improve performance by incorporating measured inherent optical properties (IOPs) into the model. It also lays the groundwork for enhanced near-real-time monitoring and future integration of new satellite and airborne sensors.
+
+## Conclusion:
+
+`HYDROPT` offers a flexible alternative to the off-the-shelf band-ratio algorithms for the client. Hydropt can be tailored to environments such as turbid inland lakes and any optical sensor that measures in the visible domain. Incorporating site-specific *in-situ* bio-optical measurements (though not available during this project) can potentially further enhance water quality retrieval performance.
+
+## References
+
+- **Holtrop, T.**, Van Der Woerd, H.J.. (2021). Hydropt: An open-source framework for fast inverse modelling of multi -and hyperspectral observations from oceans, coastal and inland waters. *Remote Sens.* 13, 3006. DOI: <a href="https://doi.org/10.3390/rs13153006" target="_blank">10.3390/rs13153006</a>
+
+- Van Der Woerd, H. J., & Pasterkamp, R. (2008). HYDROPT: A fast and flexible method to retrieve chlorophyll-a from multispectral satellite observations of optically complex coastal waters. *Remote Sensing of Environment*, 112(4), 1795-1807. DOI: <a href="https://doi.org/10.1016/j.rse.2007.09.001" target="_blank">10.1016/j.rse.2007.09.001</a>
+
+- **Holtrop, T.**, Van Der Woerd, H.J. (2020). An open-source Hydrolight-based framework for fast inverse modelling of hyperspectral data. <a href="https://agu.confex.com/agu/osm20/meetingapp.cgi/Paper/651689" target="_blank">Hyperspectral Sensing of Coastal Aquatic Environments</a>, American Geophysical Union, Ocean Sciences Meeting, San Diego, California, USA.

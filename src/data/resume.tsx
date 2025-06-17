@@ -1,5 +1,6 @@
 import { Icons } from "@/components/icons";
 import { HomeIcon, NotebookIcon } from "lucide-react";
+import { FaBluesky } from "react-icons/fa6";
 
 export const DATA = {
   name: "Tadzio",
@@ -35,6 +36,7 @@ export const DATA = {
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
     { href: "#projects", icon: NotebookIcon, label: "Articles" },
+    { href: "https://bsky.app/profile/tadz-io.bsky.social", icon: FaBluesky, label: "Bluesky"}
   ],
   contact: {
     email: "hello@example.com",
@@ -76,7 +78,26 @@ export const DATA = {
       },
     },
   },
-
+  services: [
+    {
+      name: "Geospatial and Remote Sensing Analysis",
+      subtitle: "Machine learning model development and inference for geospatial applications",
+      description: "I offer services in developing <b>predictive models</b> for <b>geospatial applications</b>. Including, but not limited to, <b>retrieval models</b> for multi- and hyperspectral satellite and airborne sensors, as well as multivariate prediction models for <b>ecosystem assessment</b> and <b>climate projections</b>.",
+      logoUrl: "LucideBrainCircuit",
+    },
+    {
+      name: "Software Development",
+      subtitle: "Software development, data pipelines & cloud infrastructure for scalable geo-applications",
+      description: "<b>Tailored</b> software development and implementation services for the <b>efficient processing</b> and <b>analysis</b> of <b>large-scale</b> geospatial and remote sensing <b>datasets</b>.",
+      logoUrl: "LucideCog",
+    },
+    {
+      name: "Data Visualization",
+      subtitle: "Interactive visualization solutions",
+      description: "I deliver visualization solutions to <b>interpret</b>, <b>explore</b>, and <b>communicate</b> geospatial data to clients, stakeholders, and students, ranging from <b>interactive dashboards</b> to fully <b>rendered 3D visualizations</b>.",
+      logoUrl: "LucideEye",
+    },
+  ],
   training: [
     {
       company: "European Space Agency (ESA)",

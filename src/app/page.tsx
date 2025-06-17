@@ -11,6 +11,7 @@ import { DATA } from "@/data/resume";
 import Link from "next/link";
 import Markdown from "react-markdown";
 import { ClientLogos } from "@/components/client-carousel";
+import { ServicesCard } from "@/components/services-card";
 
 const BLUR_FADE_DELAY = 0.04;
 
@@ -97,6 +98,37 @@ export default function Page() {
             <ClientLogos />
           </BlurFade>
         </div>
+      </section>
+      <section id="services">
+        <div className="grid items-center justify-center gap-4 px-4 text-center md:px-6 w-full mt-0 mb-12">
+          <BlurFade delay={BLUR_FADE_DELAY * 16}>
+            <div className="space-y-3">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+                Services
+              </h2>
+              <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                I provide a variety of services catered to geospatial and remote sensing data
+              </p>
+            </div>
+          </BlurFade>
+        </div>
+        <div className="flex min-h-0 flex-col gap-y-3 py-0 pb-10">
+            {DATA.services.map((services, id) => (
+              <BlurFade
+                key={services.name}
+                delay={BLUR_FADE_DELAY * 8 + id * 0.05}
+              >
+                <ServicesCard
+                  key={services.name}
+                  title={services.name}
+                  subtitle={services.subtitle}
+                  logoUrl={services.logoUrl}
+                  altText={services.name}
+                  description={services.description}
+                />
+              </BlurFade>
+            ))}
+          </div>
       </section>
       <section id="contact">
         <div className="grid items-center justify-center gap-4 px-4 text-center md:px-6 w-full mt-0 mb-12">
