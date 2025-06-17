@@ -1,5 +1,6 @@
 import { Icons } from "@/components/icons";
 import { HomeIcon, NotebookIcon } from "lucide-react";
+import { FaBluesky } from "react-icons/fa6";
 
 export const DATA = {
   name: "Tadzio",
@@ -35,6 +36,7 @@ export const DATA = {
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
     { href: "#projects", icon: NotebookIcon, label: "Articles" },
+    { href: "https://bsky.app/profile/tadz-io.bsky.social", icon: FaBluesky, label: "Bluesky"}
   ],
   contact: {
     email: "hello@example.com",
