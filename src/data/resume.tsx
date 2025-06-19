@@ -11,7 +11,7 @@ export const DATA = {
   description:
     "Geospatial Data Scientist with 8+ years of experience, passionate about leveraging remote sensing technology to address planetary challenges",
   summary:
-    "I have a broad interest in the application of geospatial and remote sensing technologies to address environmental and societal challenges at scale. My background is in [Remote Sensing & Oceanography](#work), but since then I have branched out into data science, geospatial analysis, and software development. I’m particularly excited by the convergence of physics-based simulations (especially radiative transfer), remote sensing and machine learning. Take a look at my portfolio, and if you’d like to collaborate, please don’t hesitate to get in [touch!](#contact)",
+    "I have a broad interest in the application of geospatial and remote sensing technologies to address environmental and societal challenges at scale. I hold a [PhD in Remote Sensing & Oceanography](#work), but since then I have branched out into data science, geospatial analysis, and software development. I’m particularly excited by the convergence of physics-based simulations (especially radiative transfer), remote sensing and machine learning. Take a look at my portfolio, and if you’d like to collaborate, please don’t hesitate to get in [touch!](#contact)",
   avatarUrl: "/profile-picture.png",
   skills: [
     "python",
@@ -109,6 +109,18 @@ export const DATA = {
       start: "Nov 2024",
       description:
         `Attended the 3D Radiative Transfer Modelling workshop as part of <a href="https://hyperspectral2024.esa.int/" target="_blank" rel="noopener noreferrer" class="font-bold underline">ESA's Spaceborne Imaging Spectroscopy</a> event in 2024
+        `,
+    },
+    {
+      company: "Alfred Wagner Institute (AWI)",
+      href: "https://hyperspectral2024.esa.int/",
+      badges: [],
+      location: "Villefranche, France & Helgoland, Germany",
+      title: "European Scientific Diver Training",
+      logoUrl: "/awi.png",
+      start: "Apr 2024",
+      description:
+        `I joined an intensive 5 week training program to become a certified European scientific diver. Dive training was conducted in dry suits, using full face masks with underwater communication systems. The course follows the strict standards for professional diving set by the <a href="https://forschungstauchen-deutschland.de/index.php/en/the-commision-for-scientific-diving/rechtliche-grundlagen" class="font-bold underline" target="_blank">DGUV</a>. More on the training program: <a href="https://www.awi.de/en/science/special-groups/scientific-diving.html" class="font-bold underline" target="_blank">Centre for Scientific Diving</a>
         `,
     },
     {
