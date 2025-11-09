@@ -330,6 +330,25 @@ export const DATA = {
   ],
   work: [
     {
+      title: "Geospatial Data Engineer",
+      company: "dClimate Labs",
+      dates: "Sep 2025 - Present",
+      location: "🇺🇸 New York, NY, United States",
+      description:
+        `• Designed and maintained end-to-end satellite data processing pipelines to support MRV due diligence for carbon markets and sustainable agriculture initiatives.
+
+         • Built and managed scalable cloud infrastructure for ingesting and processing terabytes of satellite data using Prefect, Docker, and Kubernetes/Coiled across cloud-agnostic environments.
+
+         • Productionized scientific algorithms and implemented robust CI/CD workflows to ensure quality assurance and reproducibility.
+         
+         • Led a cross-functional team of developers and scientists to develop state-of-the-art geospatial data pipelines within an agile work environment.
+        `,
+      image:
+        "/dclimatelabs-inverted-work.png",
+      mlh: "",
+      links: [],
+    },
+    {
       title: "Data Scientist & Geospatial Consultant",
       company: "Planblue GmbH",
       dates: "Feb 2024 - Apr 2025",
