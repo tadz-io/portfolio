@@ -337,7 +337,7 @@ export const DATA = {
       description:
         `• Designed and maintained end-to-end satellite data processing pipelines to support MRV due diligence for carbon markets and sustainable agriculture initiatives.
 
-         • Built and managed scalable cloud infrastructure for ingesting and processing terabytes of satellite data using Prefect, Docker, and Kubernetes/Coiled across cloud-agnostic environments.
+         • Built and managed scalable cloud infrastructure for ingesting and processing terabytes of satellite data using Prefect, Docker, and Coiled across cloud-agnostic environments.
 
          • Productionized scientific algorithms and implemented robust CI/CD workflows to ensure quality assurance and reproducibility.
          
