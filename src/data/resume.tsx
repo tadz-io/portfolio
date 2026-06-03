@@ -9,7 +9,7 @@ export const DATA = {
   location: "Ericeira, Portugal",
   locationLink: "",
   description:
-    "Geospatial Data Scientist with 8+ years of experience, passionate about leveraging remote sensing technology to address planetary challenges",
+    "Geospatial Data Scientist & Remote Sensing specialist with 9+ years of experience, passionate about leveraging remote sensing technology to address planetary challenges",
   summary:
     "I have a broad interest in the application of geospatial and remote sensing technologies to address environmental and societal challenges at scale. I hold a [PhD in Remote Sensing & Oceanography](#work), but since then I have branched out into data science, geospatial analysis, and software development. I’m particularly excited by the convergence of physics-based simulations (especially radiative transfer), remote sensing and machine learning. Take a look at my portfolio, and if you’d like to collaborate, please don’t hesitate to get in [touch!](#contact)",
   avatarUrl: "/profile-picture.png",
@@ -22,15 +22,14 @@ export const DATA = {
     "rasterio",
     "docker",
     "geo-pandas",
-    "terraform",
+    "stac",
+    "geoparquet",
     "git",
-    "kedro",
     "aws",
-    "airflow",
-    "plotly",
+    "prefect",
+    "mlflow",
     "dask",
     "zarr",
-    "netcdf",
     "c++"
   ],
   navbar: [
@@ -335,13 +334,14 @@ export const DATA = {
       dates: "Sep 2025 - Present",
       location: "🇺🇸 New York, NY, United States",
       description:
-        `• Designed and maintained end-to-end satellite data processing pipelines to support MRV due diligence for carbon markets and sustainable agriculture initiatives.
+        `• Designed and maintained ML training and inference pipelines for geospatial foundational models fusing optical and SAR satellite imagery.
 
-         • Built and managed scalable cloud infrastructure for ingesting and processing terabytes of satellite data using Prefect, Docker, and Coiled across cloud-agnostic environments.
+         • Built scalable cloud infrastructure for large-scale dataset ingestion, tiling and distributed chunk processing using Prefect, Docker, and Dask.
 
-         • Productionized scientific algorithms and implemented robust CI/CD workflows to ensure quality assurance and reproducibility.
-         
-         • Led a cross-functional team of developers and scientists to develop state-of-the-art geospatial data pipelines within an agile work environment.
+         • Productionized scientific algorithms with CI/CD and MLflow experiment tracking to monitor model performance.
+
+         • Led a cross-functional team of developers and scientists to develop 
+         state-of-the-art geospatial data pipelines within an agile work environment.
         `,
       image:
         "/dclimatelabs-inverted-work.png",
@@ -354,7 +354,9 @@ export const DATA = {
       dates: "Feb 2024 - Apr 2025",
       location: "🇩🇪 Bremen, Germany",
       description:
-        `• Implemented automated validation workflows and quality control for raw sensor data and end-user data products.
+        `• Validated retrievals against reference standards and in-situ measurements.
+
+        • Implemented automated validation workflows and quality control for raw sensor data and end-user data products.
         
         • Specified requirements and implemented solutions for geospatial data processing and storage using Xarray and Zarr.
 
@@ -371,11 +373,9 @@ export const DATA = {
       dates: "Jun 2022 - Jan 2024",
       location: "🇩🇪 Bremen, Germany",
       description:
-        `• Led the design and development of processing pipelines for hyperspectral imagery, transforming raw data into analysis-ready products
+        `• Led development of end-to-end hyperspectral processing pipelines (Level 0 to Level 3) with automated quality controls, covering radiometric and water column correction.
         
-        • Spearheaded the acquisition of a new optical sensor, enabling our imaging system to derive spectral reflectance measurements
-
-        • Designed and conducted calibration and validation experiments to ensure accuracy and reliability of hyperspectral measurements
+        • Spearheaded acquisition of a new optical sensor; designed and executed calibration campaigns to ensure precise spectral reflectance measurements.
 
         • Interfacing between data science, engineering and business teams
         `,
@@ -389,11 +389,9 @@ export const DATA = {
       dates: "Nov 2021 - Mar 2022",
       location: "🇺🇸 Portland, Oregon, United States",
       description:
-      `• Implementation of a physics based retrieval framework (HYDROPT) for the retrieval of water-quality parameters. 
+      `• Implemented a Dockerized physics-based inversion framework for cloud processing of Sentinel-2 imagery.
 
-      • Implement the HYDROPT framework in a Docker container to scale and optimize processing of Sentinel-2 imagery in the cloud.
-
-      • Validation of water quality retrievals for lakes and rivers in the US and Germany against in-situ measurements.
+      • Validated retrievals of water quality parameters against in-situ measurements from lakes and rivers in Germany and the US.
       `,
       image:
         "/gybe-work.png",
@@ -449,7 +447,7 @@ export const DATA = {
       dates: "Mar 2020 - Jun 2020",
       location: "🇺🇸 La Jolla Shores, California, United States",
       description:
-      `• On-going development of a physics based retrieval algorithm for satellite ocean color applications
+      `• Developed bio-optical models for a physics-based inversion framework for hyperspectral ocean color observations.
       `,
       image:
         "/scripps-work.png",
