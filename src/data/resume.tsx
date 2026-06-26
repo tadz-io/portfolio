@@ -354,7 +354,7 @@ export const DATA = {
       dates: "Feb 2024 - Apr 2025",
       location: "🇩🇪 Bremen, Germany",
       description:
-        `• Validated retrievals against reference standards and in-situ measurements.
+        `• Led hyperspectral cal/val campaigns, ensuring radiometric accuracy and product reliability through reference standards and in-situ measurements.
 
         • Implemented automated validation workflows and quality control for raw sensor data and end-user data products.
         
