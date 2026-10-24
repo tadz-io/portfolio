@@ -357,6 +357,7 @@ export const DATA = {
          • Led a cross-functional team of developers and scientists to develop 
          state-of-the-art geospatial data pipelines within an agile work environment.
         `,
+      image: "",
       mlh: "",
       links: [],
     },
