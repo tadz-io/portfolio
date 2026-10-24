@@ -12,7 +12,7 @@ export const DATA = {
     "Geospatial Data Scientist & Remote Sensing specialist with 9+ years of experience, passionate about leveraging remote sensing technology to address planetary challenges",
   summary:
     "I have a broad interest in the application of geospatial and remote sensing technologies to address environmental and societal challenges at scale. I hold a [PhD in Remote Sensing & Oceanography](#work), but since then I have branched out into data science, geospatial analysis, and software development. I’m particularly excited by the convergence of physics-based simulations (especially radiative transfer), remote sensing and machine learning. Take a look at my portfolio, and if you’d like to collaborate, please don’t hesitate to get in [touch!](#contact)",
-  avatarUrl: "/profile-picture.png",
+  avatarUrl: "/profile-picture-2.jpg",
   skills: [
     "python",
     "xarray",
@@ -329,9 +329,23 @@ export const DATA = {
   ],
   work: [
     {
+      title: "Head of Data",
+      company: "dClimate Labs",
+      dates: "Apr 2026 - Present",
+      location: "🇺🇸 New York, NY, United States",
+      description:
+        `• Led a cross-functional team of developers and scientists to develop 
+         state-of-the-art geospatial data pipelines.
+        `,
+      image:
+        "/cyclops-work.png",
+      mlh: "",
+      links: [],
+    },
+    {
       title: "Geospatial Data Engineer",
       company: "dClimate Labs",
-      dates: "Sep 2025 - Present",
+      dates: "Sep 2025 - Apr 2026",
       location: "🇺🇸 New York, NY, United States",
       description:
         `• Designed and maintained ML training and inference pipelines for geospatial foundational models fusing optical and SAR satellite imagery.
@@ -343,8 +357,6 @@ export const DATA = {
          • Led a cross-functional team of developers and scientists to develop 
          state-of-the-art geospatial data pipelines within an agile work environment.
         `,
-      image:
-        "/dclimatelabs-inverted-work.png",
       mlh: "",
       links: [],
     },
