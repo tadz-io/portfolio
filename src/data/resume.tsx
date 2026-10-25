@@ -353,9 +353,6 @@ export const DATA = {
          • Built scalable cloud infrastructure for large-scale dataset ingestion, tiling and distributed chunk processing using Prefect, Docker, and Dask.
 
          • Productionized scientific algorithms with CI/CD and MLflow experiment tracking to monitor model performance.
-
-         • Led a cross-functional team of developers and scientists to develop 
-         state-of-the-art geospatial data pipelines within an agile work environment.
         `,
       image: "",
       mlh: "",
